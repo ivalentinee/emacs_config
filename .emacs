@@ -104,7 +104,18 @@ the current position of point, then move it to the beginning of the line."
 (global-set-key (kbd "<C-tab>") 'other-window)
 (global-set-key (kbd "<s-tab>") 'next-buffer)
 
-;;(add-hook 'foo-mode-hook (lambda () (interactive) (column-marker-1 80)))
+;; Comment current line
+(defun comment-or-uncomment-region-or-line ()
+    "Comments or uncomments the region or the current line if there's no active region."
+    (interactive)
+    (let (beg end)
+        (if (region-active-p)
+            (setq beg (region-beginning) end (region-end))
+            (setq beg (line-beginning-position) end (line-end-position)))
+        (comment-or-uncomment-region beg end)))
+(global-set-key (kbd "M-;") 'comment-or-uncomment-region-or-line)
+
+;; 80-character line
 (require 'fill-column-indicator)
 (add-hook 'c-mode-hook 'fci-mode)
 (add-hook 'ruby-mode-hook 'fci-mode)
@@ -113,7 +124,7 @@ the current position of point, then move it to the beginning of the line."
 ;;(require 'ruby-electric)
 ;;(add-hook 'ruby-mode-hook (lambda () (ruby-electric-mode t)))
 
-;; indentation settings
+;; Indentation settings
 (add-hook 'c-mode-hook (lambda () (local-set-key "\r" 'newline-and-indent)))
 (setq c-default-style "linux" c-basic-offset 4)
 (add-hook 'ruby-mode-hook (lambda () (local-set-key "\r" 'newline-and-indent)))
