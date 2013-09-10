@@ -82,6 +82,9 @@
            (and (get-buffer buffer)
             (kill-buffer buffer)))))
 
+;; Disable linum mode for DocView
+(require 'linum-off)
+
 ;; Switch between first-ident & beginning of line
 (defun smart-line-beginning ()
   "Move point to the beginning of text on the current line; if that is already
