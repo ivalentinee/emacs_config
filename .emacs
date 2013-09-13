@@ -85,6 +85,9 @@
 ;; Disable linum mode for DocView
 (require 'linum-off)
 
+;; Setup markdown-mode for *.md
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
 ;; Switch between first-ident & beginning of line
 (defun smart-line-beginning ()
   "Move point to the beginning of text on the current line; if that is already
