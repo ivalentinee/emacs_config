@@ -2,6 +2,7 @@
 (setq load-path (cons (expand-file-name "~/.emacs.d/rails-reloaded") load-path))
 (require 'rails-autoload)
 (require 'haml-mode)
+(require 'pair-mode)
 (setq default-buffer-file-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 (setq-default coding-system-for-write 'utf-8)
@@ -144,6 +145,13 @@ the current position of point, then move it to the beginning of the line."
 ;; Auto-complete
 (require 'auto-complete-config)
 (ac-config-default)
+(add-hook 'emacs-lisp-mode-hook 'auto-complete-mode)
+(add-hook 'c-mode-hook 'auto-complete-mode)
+(add-hook 'ruby-mode-hook 'auto-complete-mode)
+(add-hook 'tuareg-mode-hook 'auto-complete-mode)
+(add-hook 'haskell-mode-hook 'auto-complete-mode)
+(add-hook 'markdown-mode-hook 'auto-complete-mode)
+
 
 ;; Parentheses mode
 (require 'highlight-parentheses)
@@ -152,31 +160,19 @@ the current position of point, then move it to the beginning of the line."
 (add-hook 'ruby-mode-hook 'highlight-parentheses-mode)
 (add-hook 'tuareg-mode-hook 'highlight-parentheses-mode)
 (add-hook 'haskell-mode-hook 'highlight-parentheses-mode)
+(add-hook 'markdown-mode-hook 'highlight-parentheses-mode)
+
+;; Parenthesis
+(setq blink-matching-delay 0.2)
+(add-hook 'emacs-lisp-mode-hook 'pair-mode)
+(add-hook 'c-mode-hook 'pair-mode)
+(add-hook 'ruby-mode-hook 'pair-mode)
+(add-hook 'tuareg-mode-hook 'pair-mode)
+(add-hook 'haskell-mode-hook 'pair-mode)
+(add-hook 'markdown-mode-hook 'pair-mode)
 
 ;; Org-mode
 ; (add-hook 'org-mode-hook 'turn-on-font-lock) ; not needed when global-font-lock-mode is on
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
-
-;; Rsense
-;(setq rsense-home "$RSENSE_HOME")
-;(add-to-list 'load-path (concat rsense-home "/etc"))
-;(require 'rsense)
-
-;; Rsense + Autocomplete
-;(add-hook 'ruby-mode-hook
-;          (lambda ()
-;            (add-to-list 'ac-sources 'ac-source-rsense-method)
-;            (add-to-list 'ac-sources 'ac-source-rsense-constant)))
-
-;; Complete by C-c .
-;(add-hook 'ruby-mode-hook
-;          (lambda ()
-;            (local-set-key (kbd "C-c .") 'ac-complete-rsense)))
-
-;; Autocomplete after . and ::
-;(add-hook 'ruby-mode-hook
-;          (lambda ()
-;            (add-to-list 'ac-sources 'ac-source-rsense-method)
-;            (add-to-list 'ac-sources 'ac-source-rsense-constant)))
