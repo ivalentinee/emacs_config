@@ -14,6 +14,8 @@ My emacs config. And I don't think it's useful for anyone but me.
 
 [Pair-mode](http://www.loveshack.ukfsn.org/emacs/pair-mode.el)
 
+[Textmate-mode](https://github.com/defunkt/textmate.el)
+
 [Tuareg-mode](https://github.com/emacsmirror/tuareg)
 
 [Workgroups for Windows](https://github.com/tlh/workgroups.el)

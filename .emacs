@@ -3,6 +3,7 @@
 (require 'rails-autoload)
 (require 'haml-mode)
 (require 'pair-mode)
+(require 'textmate)
 (setq default-buffer-file-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 (setq-default coding-system-for-write 'utf-8)
@@ -170,6 +171,15 @@ the current position of point, then move it to the beginning of the line."
 (add-hook 'tuareg-mode-hook 'pair-mode)
 (add-hook 'haskell-mode-hook 'pair-mode)
 (add-hook 'markdown-mode-hook 'pair-mode)
+
+;; Textmate
+(add-hook 'emacs-lisp-mode-hook 'textmate-mode)
+(add-hook 'c-mode-hook 'textmate-mode)
+(add-hook 'ruby-mode-hook 'textmate-mode)
+(add-hook 'tuareg-mode-hook 'textmate-mode)
+(add-hook 'haskell-mode-hook 'textmate-mode)
+(add-hook 'markdown-mode-hook 'textmate-mode)
+
 
 ;; Org-mode
 ; (add-hook 'org-mode-hook 'turn-on-font-lock) ; not needed when global-font-lock-mode is on
