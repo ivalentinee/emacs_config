@@ -173,16 +173,10 @@ the current position of point, then move it to the beginning of the line."
 (add-hook 'markdown-mode-hook 'pair-mode)
 
 ;; Textmate
-(add-hook 'emacs-lisp-mode-hook 'textmate-mode)
-(add-hook 'c-mode-hook 'textmate-mode)
-(add-hook 'ruby-mode-hook 'textmate-mode)
-(add-hook 'tuareg-mode-hook 'textmate-mode)
-(add-hook 'haskell-mode-hook 'textmate-mode)
-(add-hook 'markdown-mode-hook 'textmate-mode)
-
+(textmate-mode)
 
 ;; Org-mode
 ; (add-hook 'org-mode-hook 'turn-on-font-lock) ; not needed when global-font-lock-mode is on
 (global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
+(global-set-key "\C-ca" 'org-agenda)
