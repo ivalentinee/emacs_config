@@ -4,6 +4,7 @@
 (require 'haml-mode)
 (require 'pair-mode)
 (require 'textmate)
+(require 'ruby-end)
 (setq default-buffer-file-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 (setq-default coding-system-for-write 'utf-8)
@@ -78,7 +79,7 @@
 (global-set-key (kbd "C-1") '(lambda () (interactive) (wg-load "~/.emacs.d/wgrp/dev-2")))
 
 ;; Remove completion buffer when done
-(add-hook 'minibuffer-exit-hook 
+(add-hook 'minibuffer-exit-hook
       '(lambda ()
          (let ((buffer "*Completions*"))
            (and (get-buffer buffer)
@@ -90,6 +91,9 @@
 ;; Setup markdown-mode for *.md
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
+;; Setup ruby-mode for Gemfile
+(add-to-list 'auto-mode-alist '("\\Gemfile*\\'" . ruby-mode))
+
 ;; Switch between first-ident & beginning of line
 (defun smart-line-beginning ()
   "Move point to the beginning of text on the current line; if that is already
@@ -99,15 +103,6 @@ the current position of point, then move it to the beginning of the line."
     (beginning-of-line-text)
     (when (eq pt (point))
       (beginning-of-line))))
-
-;; set keys
-(global-set-key (kbd "C-z") 'undo)
-(global-set-key (kbd "C-a") 'smart-line-beginning)
-;;(global-set-key (kbd "C-c") 'kill-ring-save)
-(global-set-key (kbd "C-v") 'yank)
-(global-set-key (kbd "C-r") 'universal-argument)
-(global-set-key (kbd "<C-tab>") 'other-window)
-(global-set-key (kbd "<s-tab>") 'next-buffer)
 
 ;; Comment current line
 (defun comment-or-uncomment-region-or-line ()
@@ -143,6 +138,10 @@ the current position of point, then move it to the beginning of the line."
 ;;ruby-fix
 (add-hook 'ruby-mode-hook (lambda () (setq ruby-insert-encoding-magic-comment nil)))
 
+;; ruby-block
+(require 'ruby-block)
+(ruby-block-mode t)
+
 ;; Auto-complete
 (require 'auto-complete-config)
 (ac-config-default)
@@ -152,6 +151,7 @@ the current position of point, then move it to the beginning of the line."
 (add-hook 'tuareg-mode-hook 'auto-complete-mode)
 (add-hook 'haskell-mode-hook 'auto-complete-mode)
 (add-hook 'markdown-mode-hook 'auto-complete-mode)
+(add-hook 'haml-mode-hook 'auto-complete-mode)
 
 
 ;; Parentheses mode
@@ -180,3 +180,12 @@ the current position of point, then move it to the beginning of the line."
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-cb" 'org-iswitchb)
 (global-set-key "\C-ca" 'org-agenda)
+
+;; set keys
+(global-set-key (kbd "C-z") 'undo)
+(global-set-key (kbd "C-a") 'smart-line-beginning)
+;;(global-set-key (kbd "C-c") 'kill-ring-save)
+;;(global-set-key (kbd "C-v") 'yank)
+(global-set-key (kbd "C-r") 'universal-argument)
+(global-set-key (kbd "<C-tab>") 'other-window)
+(global-set-key (kbd "<s-tab>") 'next-buffer)
