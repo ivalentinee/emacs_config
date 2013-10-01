@@ -186,7 +186,7 @@ the current position of point, then move it to the beginning of the line."
 (global-set-key (kbd "C-a") 'smart-line-beginning)
 ;;(global-set-key (kbd "C-c") 'kill-ring-save)
 ;;(global-set-key (kbd "C-v") 'yank)
-(global-set-key (kbd "C-r") 'universal-argument)
+;;(global-set-key (kbd "C-r") 'universal-argument)
 (global-set-key (kbd "<C-tab>") 'other-window)
 (global-set-key (kbd "<s-tab>") 'next-buffer)
 
