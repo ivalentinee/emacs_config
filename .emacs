@@ -189,3 +189,9 @@ the current position of point, then move it to the beginning of the line."
 (global-set-key (kbd "C-r") 'universal-argument)
 (global-set-key (kbd "<C-tab>") 'other-window)
 (global-set-key (kbd "<s-tab>") 'next-buffer)
+
+;; Unbind arrow keys
+(global-set-key (kbd "<left>") nil)
+(global-set-key (kbd "<right>") nil)
+(global-set-key (kbd "<up>") nil)
+(global-set-key (kbd "<down>") nil)
