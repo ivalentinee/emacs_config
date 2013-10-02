@@ -199,3 +199,7 @@ the current position of point, then move it to the beginning of the line."
 (global-set-key (kbd "<C-right>") nil)
 (global-set-key (kbd "<C-up>") nil)
 (global-set-key (kbd "<C-down>") nil)
+(global-set-key (kbd "<M-left>") nil)
+(global-set-key (kbd "<M-right>") nil)
+(global-set-key (kbd "<M-up>") nil)
+(global-set-key (kbd "<M-down>") nil)
