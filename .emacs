@@ -203,3 +203,7 @@ the current position of point, then move it to the beginning of the line."
 (global-set-key (kbd "<M-right>") nil)
 (global-set-key (kbd "<M-up>") nil)
 (global-set-key (kbd "<M-down>") nil)
+
+;; Previous && Next buffer
+(global-set-key (kbd "M-]") 'previous-buffer)
+(global-set-key (kbd "M-[") 'next-buffer)
