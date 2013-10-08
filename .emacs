@@ -33,7 +33,7 @@
  '(global-auto-revert-mode t)
  '(global-auto-revert-non-file-buffers t)
  '(global-highline-mode nil)
- '(global-linum-mode t)
+ '(global-linum-mode nil)
  '(indent-tabs-mode nil)
  '(left-margin 0)
  '(preview-default-option-list (quote ("displaymath" "floats" "graphics" "textmath" "sections" "footnotes")))
