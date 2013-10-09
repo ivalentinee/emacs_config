@@ -18,8 +18,6 @@ My emacs config. And I don't think it's useful for anyone but me.
 
 [Tuareg-mode](https://github.com/emacsmirror/tuareg)
 
-[Workgroups for Windows](https://github.com/tlh/workgroups.el)
-
 [Fill column indicator](http://www.emacswiki.org/emacs/fill-column-indicator.el)
 
 [Auto complete](http://auto-complete.org/)

@@ -71,13 +71,6 @@
 ;; copy-paste to x-buffer
 (setq x-select-enable-clipboard t)
 
-;; workgroups-mode (save-restore windows)
-(require 'workgroups)
-(setq wg-prefix-key (kbd "C-c w"))
-(workgroups-mode 1)
-(setq wg-morph-on nil)
-(global-set-key (kbd "C-1") '(lambda () (interactive) (wg-load "~/.emacs.d/wgrp/dev-2")))
-
 ;; Remove completion buffer when done
 (add-hook 'minibuffer-exit-hook
       '(lambda ()
