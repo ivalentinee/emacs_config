@@ -5,6 +5,7 @@
 (require 'pair-mode)
 (require 'textmate)
 (require 'ruby-end)
+(require 'list-register)
 (setq default-buffer-file-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 (setq-default coding-system-for-write 'utf-8)
@@ -146,7 +147,6 @@ the current position of point, then move it to the beginning of the line."
 (add-hook 'markdown-mode-hook 'auto-complete-mode)
 (add-hook 'haml-mode-hook 'auto-complete-mode)
 
-
 ;; Parentheses mode
 (require 'highlight-parentheses)
 (add-hook 'emacs-lisp-mode-hook 'highlight-parentheses-mode)
@@ -200,3 +200,6 @@ the current position of point, then move it to the beginning of the line."
 ;; Previous && Next buffer
 (global-set-key (kbd "M-]") 'previous-buffer)
 (global-set-key (kbd "M-[") 'next-buffer)
+
+;; List Registers
+(global-set-key (kbd "C-x r v") 'list-register)
