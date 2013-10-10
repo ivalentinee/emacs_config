@@ -32,6 +32,8 @@ My emacs config. And I don't think it's useful for anyone but me.
 
 [List Registers](http://www.emacswiki.org/emacs/download/list-register.el)
 
+[Direx/Direx-project](https://github.com/m2ym/direx-el)
+
 ## Colors
 
 All colors are configured for [Misterioso](https://github.com/tovbinm/emacs-24-mac/blob/master/etc/themes/misterioso-theme.el) theme and "white on black" terminals.

@@ -6,6 +6,7 @@
 (require 'textmate)
 (require 'ruby-end)
 (require 'list-register)
+(require 'direx-project)
 (setq default-buffer-file-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 (setq-default coding-system-for-write 'utf-8)
@@ -167,6 +168,9 @@ the current position of point, then move it to the beginning of the line."
 
 ;; Textmate
 (textmate-mode)
+
+;; Direx-project
+(global-set-key (kbd "C-x C-j") 'direx-project:jump-to-project-root)
 
 ;; Org-mode
 ; (add-hook 'org-mode-hook 'turn-on-font-lock) ; not needed when global-font-lock-mode is on
