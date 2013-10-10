@@ -171,6 +171,7 @@ the current position of point, then move it to the beginning of the line."
 
 ;; Direx-project
 (global-set-key (kbd "C-x C-j") 'direx-project:jump-to-project-root)
+(global-set-key (kbd "C-x C-d") 'direx:find-directory)
 
 ;; Org-mode
 ; (add-hook 'org-mode-hook 'turn-on-font-lock) ; not needed when global-font-lock-mode is on
