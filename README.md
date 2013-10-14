@@ -12,6 +12,8 @@ My emacs config. And I don't think it's useful for anyone but me.
 
 [Markdown-mode](http://jblevins.org/projects/markdown-mode/)
 
+[Coffee-mode](https://github.com/defunkt/coffee-mode)
+
 [Pair-mode](http://www.loveshack.ukfsn.org/emacs/pair-mode.el)
 
 [Textmate-mode](https://github.com/defunkt/textmate.el)
