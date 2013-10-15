@@ -183,6 +183,11 @@ the current position of point, then move it to the beginning of the line."
 (global-set-key "\C-cb" 'org-iswitchb)
 (global-set-key "\C-ca" 'org-agenda)
 
+;; w3m
+(setq browse-url-browser-function 'w3m-browse-url)
+(autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
+(setq w3m-use-cookies t) 
+
 ;; set keys
 (global-set-key (kbd "C-z") 'undo)
 (global-set-key (kbd "C-a") 'smart-line-beginning)
