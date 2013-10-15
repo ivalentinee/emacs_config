@@ -172,6 +172,9 @@ the current position of point, then move it to the beginning of the line."
 (require 'rinari)
 (global-rinari-mode)
 
+;; Cua-mode
+(cua-selection-mode t)
+
 ;; Auto-complete
 (require 'auto-complete-config)
 (ac-config-default)
