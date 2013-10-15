@@ -4,7 +4,7 @@ My emacs config. And I don't think it's useful for anyone but me.
 
 ## Modules
 
-[Emacs Rails](https://github.com/remvee/emacs-rails)
+[Rinari](https://github.com/eschulte/rinari)
 
 [Haml-mode](https://github.com/nex3/haml-mode)
 

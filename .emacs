@@ -1,6 +1,5 @@
 (add-to-list 'load-path "~/.emacs.d/")
-(setq load-path (cons (expand-file-name "~/.emacs.d/rails-reloaded") load-path))
-(require 'rails-autoload)
+(add-to-list 'load-path "~/.emacs.d/rinari")
 (require 'haml-mode)
 (require 'pair-mode)
 (require 'textmate)
@@ -117,7 +116,6 @@ the current position of point, then move it to the beginning of the line."
 (add-hook 'ruby-mode-hook 'fci-mode)
 (add-hook 'tuareg-mode-hook 'fci-mode)
 (add-hook 'haskell-mode-hook 'fci-mode)
-(add-hook 'coffee-mode-hook 'fci-mode)
 ;;(require 'ruby-electric)
 ;;(add-hook 'ruby-mode-hook (lambda () (ruby-electric-mode t)))
 
@@ -127,7 +125,6 @@ the current position of point, then move it to the beginning of the line."
 (add-hook 'ruby-mode-hook (lambda () (local-set-key "\r" 'newline-and-indent)))
 (add-hook 'tuareg-mode-hook (lambda () (local-set-key "\r" 'newline-and-indent)))
 (add-hook 'haskell-mode-hook (lambda () (local-set-key "\r" 'newline-and-indent)))
-(add-hook 'coffee-mode-hook (lambda () (local-set-key "\r" 'newline-and-indent)))
 (setq haskell-ident-offset 2)
 
 ;; delete trailing whitespaces before save
@@ -140,6 +137,10 @@ the current position of point, then move it to the beginning of the line."
 (require 'ruby-block)
 (ruby-block-mode t)
 
+;; rinari
+(require 'rinari)
+(global-rinari-mode)
+
 ;; Auto-complete
 (require 'auto-complete-config)
 (ac-config-default)
@@ -150,7 +151,6 @@ the current position of point, then move it to the beginning of the line."
 (add-hook 'haskell-mode-hook 'auto-complete-mode)
 (add-hook 'markdown-mode-hook 'auto-complete-mode)
 (add-hook 'haml-mode-hook 'auto-complete-mode)
-(add-hook 'coffee-mode-hook 'auto-complete-mode)
 
 ;; Parentheses mode
 (require 'highlight-parentheses)
@@ -160,7 +160,6 @@ the current position of point, then move it to the beginning of the line."
 (add-hook 'tuareg-mode-hook 'highlight-parentheses-mode)
 (add-hook 'haskell-mode-hook 'highlight-parentheses-mode)
 (add-hook 'markdown-mode-hook 'highlight-parentheses-mode)
-(add-hook 'coffee-mode-hook 'highlight-parentheses-mode)
 
 ;; Parenthesis
 (setq blink-matching-delay 0.2)
@@ -170,7 +169,6 @@ the current position of point, then move it to the beginning of the line."
 (add-hook 'tuareg-mode-hook 'pair-mode)
 (add-hook 'haskell-mode-hook 'pair-mode)
 (add-hook 'markdown-mode-hook 'pair-mode)
-(add-hook 'coffee-mode-hook 'pair-mode)
 
 ;; Textmate
 (textmate-mode)
