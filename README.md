@@ -14,7 +14,7 @@ My emacs config. And I don't think it's useful for anyone but me.
 
 [Coffee-mode](https://github.com/defunkt/coffee-mode)
 
-[Pair-mode](http://www.loveshack.ukfsn.org/emacs/pair-mode.el)
+[Autopair](https://github.com/capitaomorte/autopair)
 
 [Textmate-mode](https://github.com/defunkt/textmate.el)
 

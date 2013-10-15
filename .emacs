@@ -1,7 +1,6 @@
 (add-to-list 'load-path "~/.emacs.d/")
 (add-to-list 'load-path "~/.emacs.d/rinari")
 (require 'haml-mode)
-(require 'pair-mode)
 (require 'textmate)
 (require 'ruby-end)
 (require 'list-register)
@@ -193,14 +192,11 @@ the current position of point, then move it to the beginning of the line."
 (add-hook 'haskell-mode-hook 'highlight-parentheses-mode)
 (add-hook 'markdown-mode-hook 'highlight-parentheses-mode)
 
-;; Parenthesis
-(setq blink-matching-delay 0.2)
-(add-hook 'emacs-lisp-mode-hook 'pair-mode)
-(add-hook 'c-mode-hook 'pair-mode)
-(add-hook 'ruby-mode-hook 'pair-mode)
-(add-hook 'tuareg-mode-hook 'pair-mode)
-(add-hook 'haskell-mode-hook 'pair-mode)
-(add-hook 'markdown-mode-hook 'pair-mode)
+;; Autopair
+(add-to-list 'load-path "~/.emacs.d/autopair")
+(require 'autopair)
+(autopair-global-mode)
+(setq autopair-autowrap t)
 
 ;; Textmate
 (textmate-mode)
