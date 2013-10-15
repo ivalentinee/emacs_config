@@ -49,3 +49,9 @@ I installed most of these modes from Debian repo.
 ## TODO
 
 Describe useful bindings.
+
+## Sources
+
+I took a lot of .emacs code from [emacs-fu](http://emacs-fu.blogspot.ru/).
+
+Another one source is, of course, [Emacs Wiki](http://www.emacswiki.org/).

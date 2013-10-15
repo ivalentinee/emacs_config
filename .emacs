@@ -73,6 +73,38 @@
 ;; copy-paste to x-buffer
 (setq x-select-enable-clipboard t)
 
+;; Delete the selection area with a keypress
+(delete-selection-mode t)
+
+;; Uniquify for buffers names
+(require 'uniquify)
+(setq
+  uniquify-buffer-name-style 'post-forward
+  uniquify-separator "|")
+
+;; Kill / Save current line when not selected
+(defadvice kill-ring-save (before slick-copy activate compile) "When called
+  interactively with no active region, copy a single line instead."
+  (interactive (if mark-active (list (region-beginning) (region-end)) (message
+  "Copied line") (list (line-beginning-position) (line-beginning-position
+  2)))))
+
+(defadvice kill-region (before slick-cut activate compile)
+  "When called interactively with no active region, kill a single line instead."
+  (interactive
+    (if mark-active (list (region-beginning) (region-end))
+      (list (line-beginning-position)
+        (line-beginning-position 2)))))
+
+;; Higlight changes in documents
+(global-highlight-changes-mode t)
+(setq highlight-changes-visibility-initial-state nil) ;; initially hide
+(global-set-key (kbd "<f6>") 'highlight-changes-visible-mode) ;; changes
+(set-face-foreground 'highlight-changes nil)
+(set-face-background 'highlight-changes "#382f2f")
+(set-face-foreground 'highlight-changes-delete nil)
+(set-face-background 'highlight-changes-delete "#916868")
+
 ;; Remove completion buffer when done
 (add-hook 'minibuffer-exit-hook
       '(lambda ()
@@ -186,7 +218,7 @@ the current position of point, then move it to the beginning of the line."
 ;; w3m
 (setq browse-url-browser-function 'w3m-browse-url)
 (autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
-(setq w3m-use-cookies t) 
+(setq w3m-use-cookies t)
 
 ;; set keys
 (global-set-key (kbd "C-z") 'undo)
@@ -217,3 +249,5 @@ the current position of point, then move it to the beginning of the line."
 
 ;; List Registers
 (global-set-key (kbd "C-x r v") 'list-register)
+(put 'narrow-to-region 'disabled nil)
+(put 'narrow-to-page 'disabled nil)
