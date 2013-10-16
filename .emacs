@@ -69,6 +69,9 @@
 ;; Set theme
 (if window-system (load-theme (quote misterioso)))
 
+;; Disable cursor blinking
+(blink-cursor-mode nil)
+
 ;; copy-paste to x-buffer
 (setq x-select-enable-clipboard t)
 
