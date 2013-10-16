@@ -123,6 +123,9 @@
 ;; Setup ruby-mode for Gemfile
 (add-to-list 'auto-mode-alist '("\\Gemfile*\\'" . ruby-mode))
 
+;; Setup ruby-mode for .jbuilder
+(add-to-list 'auto-mode-alist '("\\.jbuilder\\'" . ruby-mode))
+
 ;; Switch between first-ident & beginning of line
 (defun smart-line-beginning ()
   "Move point to the beginning of text on the current line; if that is already
