@@ -16,6 +16,8 @@ My emacs config. And I don't think it's useful for anyone but me.
 
 [Autopair](https://github.com/capitaomorte/autopair)
 
+[Multi Term](http://www.emacswiki.org/emacs/MultiTerm)
+
 [Textmate-mode](https://github.com/defunkt/textmate.el)
 
 [Tuareg-mode](https://github.com/emacsmirror/tuareg)

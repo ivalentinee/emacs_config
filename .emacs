@@ -181,6 +181,10 @@ the current position of point, then move it to the beginning of the line."
 ;; Cua-mode
 (cua-selection-mode t)
 
+;; Multi-term
+(require 'multi-term)
+(setq multi-term-program "/bin/bash")
+
 ;; Auto-complete
 (require 'auto-complete-config)
 (ac-config-default)
