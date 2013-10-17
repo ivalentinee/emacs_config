@@ -229,6 +229,16 @@ the current position of point, then move it to the beginning of the line."
 (autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
 (setq w3m-use-cookies t)
 
+;; Calendar settings
+(add-hook 'calendar-load-hook
+              (lambda ()
+                (calendar-set-date-style 'european)))
+(setq calendar-week-start-day 1
+          calendar-day-name-array ["Вс" "Пн" "Вт" "Ср" "Чт" "Пт" "Сб"]
+          calendar-month-name-array ["Январь" "Февраль" "Март" "Апрель" "Май" 
+                                     "Июнь" "Июль" "Август" "Сентябрь"
+                                     "Октябрь" "Ноябрь" "Декабрь"])
+
 ;; set keys
 (global-set-key (kbd "C-z") 'undo)
 (global-set-key (kbd "C-a") 'smart-line-beginning)
