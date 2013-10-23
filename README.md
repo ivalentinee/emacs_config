@@ -46,7 +46,7 @@ All colors are configured for [Misterioso](https://github.com/tovbinm/emacs-24-m
 
 ## Hint
 
-I installed most of these modes from Debian repo.
+I installed most of these modes from ELPA ([Gnu](http://elpa.gnu.org/) & [MELPA](http://melpa.milkbox.net/)).
 
 ## TODO
 

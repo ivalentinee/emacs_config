@@ -2,13 +2,13 @@
 (add-to-list 'load-path "~/.emacs.d/local")
 
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(auto-save-default nil)
  '(current-language-environment "Russian")
- '(fill-column 80)
+ '(custom-safe-themes (quote ("516029471adacb3a933acb16589efa2efa9886ad86a4dc0a503da94695c19a4e" default)))
  '(font-latex-fontify-script t)
  '(global-auto-revert-mode t)
  '(global-auto-revert-non-file-buffers t)
@@ -19,6 +19,7 @@
  '(preview-default-option-list (quote ("displaymath" "floats" "graphics" "textmath" "sections" "footnotes")))
  '(preview-fast-conversion t)
  '(ruby-indent-tabs-mode nil)
+ '(safe-local-variable-values (quote ((encoding . utf-8) (ruby-compilation-executable . "ruby") (ruby-compilation-executable . "ruby1.8") (ruby-compilation-executable . "ruby1.9") (ruby-compilation-executable . "rbx") (ruby-compilation-executable . "jruby"))))
  '(speedbar-default-position (quote left))
  '(speedbar-use-images nil)
  '(tab-always-indent nil)
@@ -28,32 +29,26 @@
  '(winner-dont-bind-my-keys t)
  '(winner-mode t nil (winner)))
 (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(default ((t (:family "Terminus" :foundry "xos4" :slant normal :weight normal :height 139 :width normal))))
- '(column-marker-1 ((t (:background "dark violet"))))
- '(font-latex-sectioning-0-face ((t (:background "grey43" :underline "cyan" :weight ultra-bold))))
- '(font-latex-sectioning-1-face ((t (:background "grey43" :underline "yellow3" :weight ultra-bold))))
- '(font-latex-sectioning-2-face ((t (:underline "cyan" :weight ultra-bold))))
- '(font-latex-sectioning-3-face ((t (:underline "yellow3" :weight ultra-bold))))
- '(font-latex-sectioning-4-face ((t (:underline t :weight bold))))
- '(font-latex-sectioning-5-face ((((class color) (background dark)) (:underline t :weight normal)))))
+ '(column-marker-1 ((t (:background "dark violet"))) t)
+ '(font-latex-sectioning-0-face ((t (:background "grey43" :underline "cyan" :weight ultra-bold))) t)
+ '(font-latex-sectioning-1-face ((t (:background "grey43" :underline "yellow3" :weight ultra-bold))) t)
+ '(font-latex-sectioning-2-face ((t (:underline "cyan" :weight ultra-bold))) t)
+ '(font-latex-sectioning-3-face ((t (:underline "yellow3" :weight ultra-bold))) t)
+ '(font-latex-sectioning-4-face ((t (:underline t :weight bold))) t)
+ '(font-latex-sectioning-5-face ((((class color) (background dark)) (:underline t :weight normal))) t))
 ;;(require 'column-marker)
 
 ;; Set theme
 (if window-system (load-theme (quote misterioso)))
 
-;; 80-character line
-(require 'fill-column-indicator)
-(add-hook 'c-mode-hook 'fci-mode)
-(add-hook 'ruby-mode-hook 'fci-mode)
-(add-hook 'tuareg-mode-hook 'fci-mode)
-(add-hook 'haskell-mode-hook 'fci-mode)
-
 ;; Local modules
 (require 'my-encoding-settings)
+(require 'package-settings)
 (require 'external-modules)
 (require 'calendar-settings)
 (require 'unbind-arrows)

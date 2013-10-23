@@ -5,8 +5,11 @@
 ;; no startup msg
 (setq inhibit-startup-message t)
 
+;; y/n instead of yes/no
+(defalias 'yes-or-no-p 'y-or-n-p)
+
 ;; Disable cursor blinking
-(blink-cursor-mode nil)
+(blink-cursor-mode 0)
 
 ;; copy-paste to x-buffer
 (setq x-select-enable-clipboard t)
@@ -21,7 +24,9 @@
 (add-hook 'ruby-mode-hook (lambda () (setq ruby-insert-encoding-magic-comment nil)))
 
 ;; highlight current line
-(highlight-current-line-on t)
-(set-face-background 'highlight-current-line-face "black")
+(defface hl-line '((t (:background "#000000")))
+  "Face to use for `hl-line-face'." :group 'hl-line)
+(setq hl-line-face 'hl-line)
+(global-hl-line-mode t)
 
 (provide 'my-minor-settings)

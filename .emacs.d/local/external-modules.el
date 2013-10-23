@@ -1,13 +1,15 @@
 ;; external-modules.el
 
-(add-to-list 'load-path "~/.emacs.d/rinari")
-
 (require 'haml-mode)
 (require 'ruby-end)
 (require 'coffee-mode)
 
 ;; Disable linum-mode for some modes
 (require 'linum-off)
+
+;; 80-character line
+(require 'fill-column-indicator)
+(fci-mode t)
 
 ;; ruby-block
 (require 'ruby-block)
@@ -25,9 +27,11 @@
 (setq multi-term-program "/bin/bash")
 
 ;; Auto complete
+(require 'auto-complete)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/dict")
 (require 'auto-complete-config)
 (ac-config-default)
-(auto-complete-mode)
+(auto-complete-mode t)
 
 ;; Parentheses mode
 (require 'highlight-parentheses)
