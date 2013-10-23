@@ -68,3 +68,4 @@
 (require 'highlight-changes-settings)
 (require 'my-file-associations)
 (require 'my-minor-settings)
+(require 'undev-settings)
