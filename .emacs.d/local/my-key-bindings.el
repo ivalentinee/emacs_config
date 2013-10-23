@@ -9,4 +9,7 @@
 (global-set-key (kbd "M-]") 'previous-buffer)
 (global-set-key (kbd "M-[") 'next-buffer)
 
+;; iBuffer
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+
 (provide 'my-key-bindings)
