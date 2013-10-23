@@ -47,6 +47,13 @@
 (require 'textmate)
 (textmate-mode)
 
+;; IDO-vertical
+(ido-vertical-mode t)
+
+;; SMEX (IDO M-x)
+(smex-initialize)
+(global-set-key (kbd "M-x") 'smex)
+
 ;; Direx-project
 (require 'direx-project)
 (global-set-key (kbd "C-x C-j") 'direx-project:jump-to-project-root)
