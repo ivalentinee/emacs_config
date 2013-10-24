@@ -54,6 +54,13 @@
 (smex-initialize)
 (global-set-key (kbd "M-x") 'smex)
 
+;; ibuffer-vc
+(add-hook 'ibuffer-hook
+  (lambda ()
+    (ibuffer-vc-set-filter-groups-by-vc-root)
+      (unless (eq ibuffer-sorting-mode 'alphabetic)
+        (ibuffer-do-sort-by-alphabetic))))
+
 ;; Direx-project
 (require 'direx-project)
 (global-set-key (kbd "C-x C-j") 'direx-project:jump-to-project-root)
