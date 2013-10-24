@@ -2,55 +2,23 @@
 
 My emacs config. And I don't think it's useful for anyone but me.
 
+## Version
+
+Current Emacs version: 24.3
+
 ## Modules
 
-[Rinari](https://github.com/eschulte/rinari)
+Since I started to use ELPA instead of manual package installation I found it difficult to track all the packages I use.
 
-[Haml-mode](https://github.com/nex3/haml-mode)
-
-[Haskell-mode](https://github.com/haskell/haskell-mode)
-
-[Markdown-mode](http://jblevins.org/projects/markdown-mode/)
-
-[Coffee-mode](https://github.com/defunkt/coffee-mode)
-
-[Autopair](https://github.com/capitaomorte/autopair)
-
-[Multi Term](http://www.emacswiki.org/emacs/MultiTerm)
-
-[Textmate-mode](https://github.com/defunkt/textmate.el)
-
-[Tuareg-mode](https://github.com/emacsmirror/tuareg)
-
-[Fill column indicator](http://www.emacswiki.org/emacs/fill-column-indicator.el)
-
-[Auto complete](http://auto-complete.org/)
-
-[Highlight parentheses](https://github.com/nschum/highlight-parentheses.el)
-
-[Org-mode](http://orgmode.org/)
-
-[AUCTeX](http://www.gnu.org/software/auctex/)
-
-[Linum-off](http://www.emacswiki.org/emacs/linum-off.el)
-
-[List Registers](http://www.emacswiki.org/emacs/download/list-register.el)
-
-[Direx/Direx-project](https://github.com/m2ym/direx-el)
-
-[w3m-emacs](http://emacs-w3m.namazu.org/)
+You can see most of my packages in package_list.
 
 ## Colors
 
 All colors are configured for [Misterioso](https://github.com/tovbinm/emacs-24-mac/blob/master/etc/themes/misterioso-theme.el) theme and "white on black" terminals.
 
-## Hint
-
-I installed most of these modes from ELPA ([Gnu](http://elpa.gnu.org/) & [MELPA](http://melpa.milkbox.net/)).
-
 ## TODO
 
-Describe useful bindings.
+Describe useful bindings && workflow.
 
 ## Sources
 
