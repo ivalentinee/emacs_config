@@ -51,6 +51,7 @@
 (require 'my-encoding-settings)
 (require 'package-settings)
 (require 'external-modules)
+(require 'set-title)
 (require 'calendar-settings)
 (require 'unbind-arrows)
 (require 'my-key-bindings)
