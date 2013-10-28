@@ -42,6 +42,7 @@
  '(font-latex-sectioning-4-face ((t (:underline t :weight bold))) t)
  '(font-latex-sectioning-5-face ((((class color) (background dark)) (:underline t :weight normal))) t))
 ;;(require 'column-marker)
+(put 'dired-find-alternate-file 'disabled nil)
 
 ;; Set theme
 (if window-system (load-theme (quote misterioso)))
