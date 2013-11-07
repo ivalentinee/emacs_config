@@ -79,6 +79,11 @@
 (global-set-key "\C-cb" 'org-iswitchb)
 (global-set-key "\C-ca" 'org-agenda)
 
+;; google-translate
+(require 'google-translate)
+(global-set-key "\C-ct" 'google-translate-at-point)
+(global-set-key "\C-cT" 'google-translate-query-translate)
+
 ;; w3m
 (setq browse-url-browser-function 'w3m-browse-url)
 (autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
