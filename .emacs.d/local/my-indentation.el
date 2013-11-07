@@ -4,7 +4,6 @@
 
 (add-hook 'c-mode-hook (lambda () (local-set-key "\r" 'newline-and-indent)))
 (setq c-default-style "linux" c-basic-offset 4)
-(add-hook 'enh-ruby-mode-hook (lambda () (local-set-key "\r" 'newline-and-indent)))
 (add-hook 'ruby-mode-hook (lambda () (local-set-key "\r" 'newline-and-indent)))
 (add-hook 'tuareg-mode-hook (lambda () (local-set-key "\r" 'newline-and-indent)))
 (add-hook 'haskell-mode-hook (lambda () (local-set-key "\r" 'newline-and-indent)))

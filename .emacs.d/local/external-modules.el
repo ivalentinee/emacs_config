@@ -11,7 +11,6 @@
 (require 'fill-column-indicator)
 (add-hook 'emacs-lisp-mode-hook 'fci-mode)
 (add-hook 'c-mode-hook 'fci-mode)
-(add-hook 'enh-ruby-mode-hook 'fci-mode)
 (add-hook 'ruby-mode-hook 'fci-mode)
 (add-hook 'tuareg-mode-hook 'fci-mode)
 (add-hook 'haskell-mode-hook 'fci-mode)
@@ -84,12 +83,6 @@
 (setq browse-url-browser-function 'w3m-browse-url)
 (autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
 (setq w3m-use-cookies t)
-
-;; google-translate
-(require 'google-translate)
-(global-set-key "\C-ct" 'google-translate-at-point)
-(global-set-key "\C-cT" 'google-translate-query-translate)
-
 
 ;; List Registers
 (require 'list-register)
