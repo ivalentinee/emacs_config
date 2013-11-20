@@ -95,4 +95,7 @@
 (put 'narrow-to-region 'disabled nil)
 (put 'narrow-to-page 'disabled nil)
 
+;; Goto last change
+(global-set-key "\C-x\C-\\" 'goto-last-change)
+
 (provide 'external-modules)
