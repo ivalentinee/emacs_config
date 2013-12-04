@@ -45,7 +45,7 @@
 (put 'dired-find-alternate-file 'disabled nil)
 
 ;; Set theme
-(if window-system (load-theme (quote misterioso)))
+(if window-system (load-theme (quote deeper-blue)))
 
 ;; Local modules
 (require 'my-encoding-settings)
