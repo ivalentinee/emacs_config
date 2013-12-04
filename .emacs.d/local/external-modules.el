@@ -98,4 +98,6 @@
 ;; Goto last change
 (global-set-key "\C-x\C-\\" 'goto-last-change)
 
+(require 'git-bindings)
+
 (provide 'external-modules)
