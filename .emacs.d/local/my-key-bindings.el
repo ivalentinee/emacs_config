@@ -6,8 +6,8 @@
 (global-set-key (kbd "<C-tab>") 'other-window)
 
 ;; Previous && Next buffer
-(global-set-key (kbd "M-]") 'previous-buffer)
-(global-set-key (kbd "M-[") 'next-buffer)
+(global-set-key (kbd "M-[") 'previous-buffer)
+(global-set-key (kbd "M-]") 'next-buffer)
 
 ;; iBuffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
