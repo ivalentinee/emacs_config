@@ -65,4 +65,5 @@
 (require 'highlight-changes-settings)
 (require 'my-file-associations)
 (require 'my-minor-settings)
+(require 'org-mode-settings)
 (require 'undev-settings)
