@@ -23,6 +23,9 @@
 (require 'rinari)
 (global-rinari-mode)
 
+;; SCSS
+(setq scss-compile-at-save nil)
+
 ;; Cua-mode
 (cua-selection-mode t)
 
