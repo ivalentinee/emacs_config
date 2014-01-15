@@ -4,10 +4,11 @@ My emacs config. And I don't think it's useful for anyone but me.
 ## Version
 Current Emacs version: 24.3
 
-## Modules
-Since I started to use ELPA instead of manual package installation I found it difficult to track all the packages I use.
+## Packages
+In order to autoinstall all packages you need to install [Cask](http://cask.github.io/).  
+After [Cask](http://cask.github.io/) installation go to **.emacs.d** directory & execute
 
-You can see most of my packages in package_list.
+    $ cask
 
 ## Colors
 All colors are configured for [Misterioso](https://github.com/tovbinm/emacs-24-mac/blob/master/etc/themes/misterioso-theme.el) theme and "white on black" terminals.
@@ -16,10 +17,10 @@ All colors are configured for [Misterioso](https://github.com/tovbinm/emacs-24-m
 Changed theme to *deeper-blue*. Everything looks fine.
 
 ## TODO
-Describe useful bindings && workflow.
+Describe useful bindings && workflow.  
+Add autoinstallation script.
 
 ## Sources
-I took a lot of .emacs code from [emacs-fu](http://emacs-fu.blogspot.ru/).
-
+I took a lot of .emacs code from [emacs-fu](http://emacs-fu.blogspot.ru/).  
 Another one source is, of course, [Emacs Wiki](http://www.emacswiki.org/).
 
