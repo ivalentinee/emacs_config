@@ -49,6 +49,7 @@
 
 ;; Local modules
 (require 'my-encoding-settings)
+(require 'cask-settings)
 (require 'package-settings)
 (require 'external-modules)
 (require 'set-title)
