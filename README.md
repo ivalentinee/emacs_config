@@ -4,6 +4,20 @@ My emacs config. And I don't think it's useful for anyone but me.
 ## Version
 Current Emacs version: 24.3
 
+## Installation
+Installation script requires **python** (for [Cask](http://cask.github.io/)), **git** and of course **Emacs**.  
+To install emacs config download [install.sh](https://raw.github.com/vemperor/emacs_config/master/install.sh)
+
+    $ wget https://raw.github.com/vemperor/emacs_config/master/install.sh
+
+Configure paths
+
+    $ emacs install.sh
+
+Run script
+
+    $ chmod u+x install.sh && ./install.sh
+
 ## Packages
 In order to autoinstall all packages you need to install [Cask](http://cask.github.io/).  
 After [Cask](http://cask.github.io/) installation go to **.emacs.d** directory & execute
@@ -18,7 +32,6 @@ Changed theme to *deeper-blue*. Everything looks fine.
 
 ## TODO
 Describe useful bindings && workflow.  
-Add autoinstallation script.
 
 ## Sources
 I took a lot of .emacs code from [emacs-fu](http://emacs-fu.blogspot.ru/).  
