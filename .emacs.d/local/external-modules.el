@@ -40,10 +40,6 @@
 (ac-config-default)
 (auto-complete-mode t)
 
-;; AucTeX
-(load "auctex.el" nil t t)
-(load "preview-latex.el" nil t t)
-
 ;; Parentheses mode
 (require 'highlight-parentheses)
 (define-globalized-minor-mode global-highlight-parentheses-mode
