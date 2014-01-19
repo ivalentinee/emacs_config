@@ -44,9 +44,6 @@
 ;;(require 'column-marker)
 (put 'dired-find-alternate-file 'disabled nil)
 
-;; Set theme
-(load-theme (quote deeper-blue))
-
 ;; Local modules
 (require 'my-encoding-settings)
 (require 'cask-settings)
@@ -67,3 +64,4 @@
 (require 'my-file-associations)
 (require 'my-minor-settings)
 (require 'org-mode-settings)
+(require 'setup-theme)
