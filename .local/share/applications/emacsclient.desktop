@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Emacs Client
+Name[ru_RU]=Клиент Emacs
+Encoding=UTF-8
+Exec=/usr/local/bin/emacsclient -c
+Terminal=false
+Icon=emacs
+StartupNotify=true
+Comment=Emacs client attached to local Emacs server
+Comment[ru_RU]=Клиент Emacs присоединённый к локальному серверу Emacs
+Categories=Development;
