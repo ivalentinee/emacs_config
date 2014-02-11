@@ -16,6 +16,7 @@
  '(global-linum-mode nil)
  '(indent-tabs-mode nil)
  '(left-margin 0)
+ '(org-agenda-files (quote ("~/Dropbox/edu/diploma/notes.org")))
  '(preview-default-option-list (quote ("displaymath" "floats" "graphics" "textmath" "sections" "footnotes")))
  '(preview-fast-conversion t)
  '(ruby-indent-tabs-mode nil)
