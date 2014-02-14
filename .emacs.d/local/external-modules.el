@@ -64,6 +64,7 @@
 ;; SMEX (IDO M-x)
 (smex-initialize)
 (global-set-key (kbd "M-x") 'smex)
+(global-set-key "\C-c\C-m" 'smex)
 
 ;; ibuffer-vc
 (add-hook 'ibuffer-hook
