@@ -21,5 +21,8 @@
 (global-set-key "\M-p" 'backward-paragraph)
 (global-set-key "\M-n" 'forward-paragraph)
 
+;; Replace M-x
+(global-set-key "\C-c\C-m" 'execute-extended-command)
+
 
 (provide 'my-key-bindings)
