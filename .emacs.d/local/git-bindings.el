@@ -5,5 +5,6 @@
 
 (global-set-key (kbd "C-c g s") 'magit-status)
 (global-set-key (kbd "C-c g c") 'magit-commit)
+(global-set-key (kbd "C-c g l") 'magit-log)
 
 (provide 'git-bindings)
