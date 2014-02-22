@@ -47,8 +47,8 @@
 
 ;; Local modules
 (require 'my-encoding-settings)
-(require 'cask-settings)
 (require 'package-settings)
+(require 'cask-settings)
 (require 'external-modules)
 (require 'set-title)
 (require 'calendar-settings)
