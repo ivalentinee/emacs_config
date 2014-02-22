@@ -54,12 +54,17 @@
 (autopair-global-mode)
 (setq autopair-autowrap t)
 
-;; Textmate
-(require 'textmate)
-(textmate-mode)
+;; Projectile
+(projectile-global-mode)
+(global-set-key "\C-c\C-f" 'projectile-find-file)
 
-;; IDO-vertical
+;; IDO
+(ido-mode t)
 (ido-vertical-mode t)
+
+;; flx-ido
+(flx-ido-mode 1)
+(setq flx-ido-use-faces nil)
 
 ;; SMEX (IDO M-x)
 (smex-initialize)
