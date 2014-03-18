@@ -24,6 +24,12 @@ After [Cask](http://cask.github.io/) installation go to **.emacs.d** directory &
 
     $ cask
 
+### Update cask file
+
+To update Cask file do
+
+    M-x pallet-init
+
 ## Colors
 All colors are configured for [Misterioso](https://github.com/tovbinm/emacs-24-mac/blob/master/etc/themes/misterioso-theme.el) theme and "white on black" terminals.
 
