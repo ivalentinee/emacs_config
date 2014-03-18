@@ -50,6 +50,7 @@
 (require 'package-settings)
 (require 'cask-settings)
 (require 'external-modules)
+(require 'dired-settings)
 (require 'set-title)
 (require 'calendar-settings)
 (require 'unbind-arrows)

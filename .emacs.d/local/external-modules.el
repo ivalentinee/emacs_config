@@ -19,6 +19,11 @@
 (require 'ruby-block)
 (ruby-block-mode t)
 
+;; dired-details
+(require 'dired-details)
+(dired-details-install)
+(setq dired-details-hidden-string "[...] ")
+
 ;; rinari
 (require 'rinari)
 (global-rinari-mode)
