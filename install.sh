@@ -2,7 +2,6 @@
 
 CASK_INSTALLATION_DIR="$HOME/.cask"
 EMACS_CONFIG_INSTALLATION_DIR="$HOME"
-YAS_SNIPPET_DIR="$EMACS_CONFIG_INSTALLATION_DIR/.emacs.d/yasnippet-snippets"
 
 
 REQUIRED_EMACS_VERSION="24.3"
@@ -67,8 +66,6 @@ function compare_versions {
 function perform_installation {
     install_emacs_config
 
-    install_yasnippets
-
     install_cask
 
     run_cask
@@ -102,15 +99,6 @@ function install_cask {
     local CASK_SETTINGS_FILE=$EMACS_CONFIG_INSTALLATION_DIR/.emacs.d/local/cask-settings.el
 
     sed -i "1 c $CASK_REQUIRE_STRING" $CASK_SETTINGS_FILE
-}
-
-function install_yasnippets {
-    git clone https://github.com/AndreaCrotti/yasnippet-snippets.git $YAS_SNIPPET_DIR
-
-    local YAS_SNIPPET_DIR_STRING="(add-to-list 'yas/root-directory \"$YAS_SNIPPET_DIR\")"
-    local YAS_SETTINGS_FILE=$EMACS_CONFIG_INSTALLATION_DIR/.emacs.d/local/yas-settings.el
-
-    sed -i "3 c $YAS_SNIPPET_DIR_STRING" $YAS_SETTINGS_FILE
 }
 
 function run_cask {
