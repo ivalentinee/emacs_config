@@ -1,4 +1,5 @@
 (add-to-list 'load-path "~/.emacs.d/")
+(add-to-list 'load-path "~/.emacs.d/global")
 (add-to-list 'load-path "~/.emacs.d/local")
 
 (custom-set-variables
