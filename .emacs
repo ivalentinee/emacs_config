@@ -68,3 +68,6 @@
 (require 'my-minor-settings)
 (require 'org-mode-settings)
 (require 'setup-theme)
+
+(require 'load-directory)
+(load-directory "~/.emacs.d/local")
