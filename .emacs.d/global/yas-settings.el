@@ -1,5 +1,9 @@
-(yas-global-mode 1)
+(require 'yasnippet)
 
-(add-to-list 'yas/root-directory "/home/emperor/.emacs.d/yasnippet-snippets")
+(add-hook 'prog-mode-hook
+          '(lambda ()
+             (yas-minor-mode)))
+
+(yas-reload-all)
 
 (provide 'yas-settings)
