@@ -69,5 +69,5 @@
 (require 'org-mode-settings)
 (require 'setup-theme)
 
-(require 'load-directory)
-(load-directory "~/.emacs.d/local")
+;; (require 'load-directory)
+;; (load-directory "~/.emacs.d/local")
