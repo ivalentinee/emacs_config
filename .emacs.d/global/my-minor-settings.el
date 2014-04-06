@@ -29,4 +29,9 @@
 (setq hl-line-face 'hl-line)
 (global-hl-line-mode t)
 
+;; which-function-mode
+(add-hook 'prog-mode-hook
+          '(lambda ()
+             (which-function-mode)))
+
 (provide 'my-minor-settings)
