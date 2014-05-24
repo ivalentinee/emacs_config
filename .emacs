@@ -18,6 +18,7 @@
  '(indent-tabs-mode nil)
  '(left-margin 0)
  '(org-agenda-files (quote ("~/Dropbox/edu/diploma/notes.org")))
+ '(org-export-html-toplevel-hlevel 1)
  '(preview-default-option-list (quote ("displaymath" "floats" "graphics" "textmath" "sections" "footnotes")))
  '(preview-fast-conversion t)
  '(ruby-indent-tabs-mode nil)
@@ -69,5 +70,6 @@
 (require 'org-mode-settings)
 (require 'setup-theme)
 
-;; (require 'load-directory)
-;; (load-directory "~/.emacs.d/local")
+(require 'customized-org-html)
+
+(require 'require-local)

@@ -8,12 +8,12 @@
 (require 'linum-off)
 
 ;; 80-character line
-(require 'fill-column-indicator)
-(add-hook 'emacs-lisp-mode-hook 'fci-mode)
-(add-hook 'c-mode-hook 'fci-mode)
-(add-hook 'ruby-mode-hook 'fci-mode)
-(add-hook 'tuareg-mode-hook 'fci-mode)
-(add-hook 'haskell-mode-hook 'fci-mode)
+;; (require 'fill-column-indicator)
+;; (add-hook 'emacs-lisp-mode-hook 'fci-mode)
+;; (add-hook 'c-mode-hook 'fci-mode)
+;; (add-hook 'ruby-mode-hook 'fci-mode)
+;; (add-hook 'tuareg-mode-hook 'fci-mode)
+;; (add-hook 'haskell-mode-hook 'fci-mode)
 
 ;; ruby-block
 (require 'ruby-block)
@@ -23,10 +23,6 @@
 (require 'dired-details)
 (dired-details-install)
 (setq dired-details-hidden-string "[...] ")
-
-;; rinari
-(require 'rinari)
-(global-rinari-mode)
 
 ;; SCSS
 (setq scss-compile-at-save nil)
