@@ -66,6 +66,7 @@
 (depends-on "list-register")
 (depends-on "logito")
 (depends-on "lua-mode")
+(depends-on "macro-math")
 (depends-on "magit")
 (depends-on "markdown-mode")
 (depends-on "markdown-mode+")

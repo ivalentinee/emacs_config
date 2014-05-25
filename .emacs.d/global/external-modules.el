@@ -108,6 +108,9 @@
 ;; Goto last change
 (global-set-key "\C-x\C-\\" 'goto-last-change)
 
+;; macro-math
+(global-set-key "\C-x=" 'macro-math-eval-region)
+
 (require 'git-bindings)
 (require 'yas-settings)
 
