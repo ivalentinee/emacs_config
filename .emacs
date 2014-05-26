@@ -69,6 +69,7 @@
 (require 'my-minor-settings)
 (require 'org-mode-settings)
 (require 'setup-theme)
+(require 'insert-name)
 
 (require 'customized-org-html)
 
