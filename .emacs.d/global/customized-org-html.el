@@ -868,7 +868,7 @@ PUB-DIR is set, use this as the publishing directory."
 	    (cond ((stringp html-pre)
 		   (setq html-pre-real-contents
 			 (format-spec html-pre `((?t . ,title) (?a . ,author)
-						 (?d . ,description) (?e . ,email)))))
+						 (?d . ,description) (?e . ,date)))))
 		  ((functionp html-pre)
 		   (insert "<div id=\"" (nth 0 org-export-html-divs) "\">\n")
 		   (if (stringp (funcall html-pre)) (insert (funcall html-pre)))

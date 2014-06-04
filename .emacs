@@ -74,3 +74,4 @@
 (require 'customized-org-html)
 
 (require 'require-local)
+(put 'downcase-region 'disabled nil)
