@@ -138,9 +138,16 @@ Default for SITEMAP-FILENAME is 'sitemap.org'."
 (defun org-custom-link-img-export (path desc format)
   (cond
    ((eq format 'html)
-    (format "<img src=\"/images/%s\" alt=\"%s\"/>" path desc))))
+    (format "<img src=\"/images/%s\">%s</img>" path desc))))
+
+(defun org-custom-link-img-with-thumbnail-export (path desc format)
+  (cond
+   ((eq format 'html)
+    (format "<a title=\"%s\" href=\"/images/%s\"><img src=\"/images/thumbnails/%s\"></a>" desc path path))))
 
 (org-add-link-type "img" 'org-custom-link-img-follow 'org-custom-link-img-export)
+(org-add-link-type "img-t" 'org-custom-link-img-follow 'org-custom-link-img-with-thumbnail-export)
+
 
 ;; Code export redefinition
 
