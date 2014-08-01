@@ -55,7 +55,7 @@
 (require 'dired-settings)
 (require 'set-title)
 (require 'calendar-settings)
-(require 'unbind-arrows)
+;; (require 'unbind-arrows)
 (require 'my-key-bindings)
 (require 'my-indentation)
 (require 'set-backup-dir)
