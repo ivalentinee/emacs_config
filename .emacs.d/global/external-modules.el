@@ -64,6 +64,8 @@
 ;; Projectile
 (projectile-global-mode)
 (global-set-key "\C-c\C-f" 'projectile-find-file)
+;; projectile-rails
+(add-hook 'projectile-mode-hook 'projectile-rails-on)
 
 ;; IDO
 (ido-mode t)
