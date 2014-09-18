@@ -45,6 +45,8 @@
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/dict")
 (require 'auto-complete-config)
 (ac-config-default)
+(require 'auto-complete-exuberant-ctags)
+(ac-exuberant-ctags-setup)
 (auto-complete-mode t)
 
 ;; Parentheses mode
@@ -64,6 +66,7 @@
 ;; Projectile
 (projectile-global-mode)
 (global-set-key "\C-c\C-f" 'projectile-find-file)
+(setq projectile-tags-command "exuberant-ctags -Re -f %s %s")
 ;; projectile-rails
 (add-hook 'projectile-mode-hook 'projectile-rails-on)
 

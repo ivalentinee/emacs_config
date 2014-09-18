@@ -9,6 +9,7 @@
 (depends-on "auto-complete")
 (depends-on "auto-complete-clang")
 (depends-on "auto-complete-clang-async")
+(depends-on "auto-complete-exuberant-ctags")
 (depends-on "auto-complete-nxml")
 (depends-on "auto-dictionary")
 (depends-on "autopair")
