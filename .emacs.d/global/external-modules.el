@@ -19,6 +19,9 @@
 (require 'ruby-block)
 (ruby-block-mode t)
 
+;; expand-region
+(global-set-key (kbd "C-=") 'er/expand-region)
+
 ;; dired-details
 (require 'dired-details)
 (dired-details-install)
