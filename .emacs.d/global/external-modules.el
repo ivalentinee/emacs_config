@@ -1,7 +1,6 @@
 ;; external-modules.el
 
 (require 'haml-mode)
-(require 'ruby-end)
 (require 'coffee-mode)
 
 ;; Disable linum-mode for some modes
