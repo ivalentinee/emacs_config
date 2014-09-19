@@ -67,6 +67,12 @@
 (autopair-global-mode)
 (setq autopair-autowrap t)
 
+;; string-inflection (Camelcase)
+(require 'string-inflection)
+(define-key global-map (kbd "C-c i u") 'string-inflection-underscore)
+(define-key global-map (kbd "C-c i c") 'string-inflection-camelcase)
+(define-key global-map (kbd "C-c i U") 'string-inflection-upcase)
+
 ;; Projectile
 (projectile-global-mode)
 (global-set-key "\C-c\C-f" 'projectile-find-file)

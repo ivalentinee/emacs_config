@@ -99,6 +99,7 @@
 (depends-on "simple-httpd")
 (depends-on "skewer-mode")
 (depends-on "smex")
+(depends-on "string-inflection")
 (depends-on "tuareg")
 (depends-on "vagrant")
 (depends-on "web-mode")
