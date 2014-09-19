@@ -49,6 +49,9 @@
 (ac-exuberant-ctags-setup)
 (auto-complete-mode t)
 
+;; ace-jump
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+
 ;; Parentheses mode
 (require 'highlight-parentheses)
 (define-globalized-minor-mode global-highlight-parentheses-mode
