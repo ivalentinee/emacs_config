@@ -70,8 +70,9 @@
 (require 'org-mode-settings)
 (require 'setup-theme)
 (require 'insert-name)
+(require 'safe-local-variables)
 
 (require 'customized-org-html)
 
-(require 'require-local)
+;; (require 'require-local)
 (put 'downcase-region 'disabled nil)
