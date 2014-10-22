@@ -1,0 +1,105 @@
+* С чего начать
+Туториал в самом Emacs - для басового освоения, хотя я не использую больше половины упомянутых комбинаций, но хорошая практика для начала работы в Emacs. Запускается со стартового буфера или комбинацией C-h t.
+
+Потом идём, читаем и применяем сразу [[https://sites.google.com/site/steveyegge2/effective-emacs][вот это дело]] (первая ссылка в соответствующем разделе данного руководства).
+
+Затем читаем "Полезные режимы, пакеты и вообще полезности".
+
+Потом немного экспериментируем и можно отправляться в свободный полёт. Удачи)
+
+* Полезные режимы, пакеты и вообще полезности
+Тут, пожалуй, можно обратиться к [[https://github.com/vemperor/emacs_config/blob/master/.emacs.d/Cask][списку пакетов]], но он большой и почти целиком есть в [[https://sites.google.com/site/steveyegge2/effective-emacs][awesome emacs]], так что не буду повторяться, поэтому опишу наиболее важные для меня кастомизации, пакеты и прочее
+
+** Немного об установке пакетов
+Для установки пакетов я пользуюсь следующим сценарием:
+1. M-x list-packages --- отобразит список пакетов
+2. C-s и C-r для поиска названия пакета
+3. RET для установки пакета
+
+*** Cask и Pallet
+[[https://github.com/cask/cask][Cask]] --- управление зависимостями пакетов Emacs. Я его использую для хранения списка установленных пакетов (прям как Gemfile/bower.json и прочее).
+
+[[https://github.com/rdallasgray/pallet][Pallet]] --- менеджер пакетов Emacs на основе Cask.
+
+** IDO
+[[http://www.emacswiki.org/InteractivelyDoThings][InteractivelyDoThings]]
+
+Полезнейшая штука, ибо даёт fuzzy-completition при работе со многими вещами. Встроен в Emacs.
+
+Для того, чтобы включить его везде добавляем в конфиг строки
+
+#+BEGIN_SRC lisp
+(setq ido-enable-flex-matching t) ;; включаем fuzzy-completition
+(setq ido-everywhere t) ;; включаем IDO везде
+(ido-mode 1) ;; включаем IDO
+#+END_SRC lisp
+
+Также стоит поставить [[https://github.com/nonsequitur/smex][smex]] --- это IDO для M-x.
+
+Ещё один musthave для Emacs и IDO на мой взгляд --- [[https://github.com/gempesaw/ido-vertical-mode.el][ido-vertical-mode]], ибо без него у меня кровоточат глаза, а с ним всё просто шикарно.
+
+** Projectile
+https://github.com/bbatsov/projectile
+
+Для кого как, а я бы ставил этот пакет первым делом.
+
+Суть - навигация по проекту. Тут вам все полезности в руки. За дальнейшим стоит отправиться в [[https://github.com/bbatsov/projectile/blob/master/README.md][ридми на Github]].
+
+** Git
+Для гита полно всяких пакетов, но я пользуюсь двумя:
+
+- [[http://magit.github.io/][Magit]]\\
+  Монструозная штука, но зато позволяет почти не вылезать из Emacs для пользования гитом.
+- [[https://github.com/voins/mo-git-blame][mo-git-blame]]\\
+  Привычный вид git-blame'а. Magit имеет свой git-blame, но мне он показался неудобным.
+
+Вроде бы Magit предоставляет какие-то комбинации клавиатурные, но я [[https://github.com/vemperor/emacs_config/blob/master/.emacs.d/global/git-bindings.el][решил запилить свои, наполненные одному мне известной семантикой]].
+
+** Org-mode
+[[http://orgmode.org/][Org-mode]] --- это целый мир.
+
+Надо записать что-то, что не является компилируемым файлом --- используй org-mode. За разъяснениями лучше обратиться на страницу org-mode'а или на страницу в wiki.
+
+[[http://www.emacswiki.org/OrgMode][Страница в wiki]]\\
+[[http://habrahabr.ru/post/105300/][статья на хабре (не очень познавательная, но представление небольшое даёт)]]
+
+Сама эта страница является org-файлом. Да-да, Github воспринимает org-файлы, как и, например, markdown.
+
+Также [[http://vemperor.github.io/Emacs/emacs-bloging.html][мой блог использует org-mode]].
+
+Для пользователей org-mode рекомендую сделать три вещи:
+1. Включить org-indent-mode
+2. Включить truncate-lines
+3. Включить word-wrap
+
+Делается это добавлением следующих строк в конфиг:
+
+#+begin_src lisp
+(setq org-startup-indented 1)
+(add-hook 'org-mode-hook (lambda () (setq truncate-lines t)))
+(add-hook 'org-mode-hook (lambda () (setq word-wrap t)))
+#+end_src
+
+* Ссылки
+https://sites.google.com/site/steveyegge2/effective-emacs --- мастрид, чтобы руки не отклеились
+
+https://github.com/vemperor/emacs_config --- моя репка с конфигом
+
+https://github.com/emacs-tw/awesome-emacs --- список наиболее крутых пакетов разложенный по категориям
+
+http://punchcard.files.wordpress.com/2010/10/emacs2.png --- неплохая картинка (такая же для вима вроде достаточно популярна)
+
+http://melpa.milkbox.net/#/ --- я пользуюсь этим репом пакетов, ибо нестабильные пакеты не очень часто, но полно всего полезного
+
+http://emacs-fu.blogspot.ru/ --- блог про Emacs. Не обновлялся год, но полно прикольных штук
+
+http://www.emacswiki.org/ --- пожалуй, самый большой справочник по Emacs. Наполняется сообществом, поэтому вместе с просто инфой куча всяких хаков и юзкейсов по каждому вопросу.
+
+http://emacsrocks.com/ --- крутой парень, который вещает скринкасты про фичи Emacs. Есть один потрясный Live=)
+
+
+
+
+
+
+

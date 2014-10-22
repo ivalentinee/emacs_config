@@ -106,6 +106,7 @@
 
 ;; Org-mode
 (add-hook 'org-mode-hook (lambda () (setq truncate-lines t)))
+(add-hook 'org-mode-hook (lambda () (setq word-wrap t)))
 (setq org-startup-indented 1)
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-cb" 'org-iswitchb)
