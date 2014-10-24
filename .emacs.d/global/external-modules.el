@@ -68,6 +68,13 @@
 (add-hook 'lisp-mode-hook             #'enable-paredit-mode)
 (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
 (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
+(global-set-key (kbd "C-x p f") 'paredit-forward-slurp-sexp)
+(global-set-key (kbd "C-x p b") 'paredit-backward-slurp-sexp)
+
+;; slime
+(require 'slime-autoloads)
+(setq inferior-lisp-program "/usr/bin/sbcl")
+(setq slime-contribs '(slime-fancy))
 
 ;; Autopair
 (add-to-list 'load-path "~/.emacs.d/autopair")
