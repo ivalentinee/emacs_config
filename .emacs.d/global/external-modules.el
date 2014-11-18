@@ -26,6 +26,10 @@
 (dired-details-install)
 (setq dired-details-hidden-string "[...] ")
 
+;; Smart Mode Line
+(sml/setup)
+(sml/apply-theme 'dark)
+
 ;; SCSS
 (setq scss-compile-at-save nil)
 
