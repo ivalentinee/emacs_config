@@ -29,6 +29,7 @@
 (depends-on "direx")
 (depends-on "enh-ruby-mode")
 (depends-on "epl")
+(depends-on "etags-select")
 (depends-on "etags-table")
 (depends-on "expand-region")
 (depends-on "f")

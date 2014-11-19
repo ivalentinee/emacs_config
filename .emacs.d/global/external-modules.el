@@ -99,6 +99,9 @@
 ;; projectile-rails
 (add-hook 'projectile-mode-hook 'projectile-rails-on)
 
+;; etags-select
+(global-set-key (kbd "C-M-.") 'etags-select-find-tag)
+
 ;; IDO
 (ido-mode t)
 (ido-vertical-mode t)
