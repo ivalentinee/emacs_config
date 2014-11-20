@@ -20,6 +20,10 @@
 ;; paragraphs forward & baskward
 (global-set-key "\M-p" 'backward-paragraph)
 (global-set-key "\M-n" 'forward-paragraph)
+;; and for slime
+(add-hook 'slime-mode-hook
+          (define-key slime-mode-map "\M-p" 'backward-paragraph)
+          (define-key slime-mode-map "\M-n" 'forward-paragraph))
 
 
 (provide 'my-key-bindings)
