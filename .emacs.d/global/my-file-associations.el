@@ -11,4 +11,6 @@
 (add-to-list 'auto-mode-alist
                '("\\(Capfile\\|Gemfile\\(?:\\.[a-zA-Z0-9._-]+\\)?\\|[rR]akefile\\)\\'" . ruby-mode))
 
+(add-to-list 'auto-mode-alist '("\\.sibilant\\'" . lisp-mode))
+
 (provide 'my-file-associations)
