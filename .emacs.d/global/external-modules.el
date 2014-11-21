@@ -52,6 +52,11 @@
 (ac-exuberant-ctags-setup)
 (auto-complete-mode t)
 
+;; Aggressive indent
+(add-hook 'emacs-lisp-mode-hook #'aggressive-indent-mode)
+(add-hook 'lisp-mode-hook #'aggressive-indent-mode)
+(add-hook 'slime-mode-hook #'aggressive-indent-mode)
+
 ;; ace-jump
 (define-key global-map (kbd "C-c C-SPC") 'ace-jump-mode)
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
