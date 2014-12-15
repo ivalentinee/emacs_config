@@ -44,7 +44,8 @@
  '(font-latex-sectioning-2-face ((t (:underline "cyan" :weight ultra-bold))) t)
  '(font-latex-sectioning-3-face ((t (:underline "yellow3" :weight ultra-bold))) t)
  '(font-latex-sectioning-4-face ((t (:underline t :weight bold))) t)
- '(font-latex-sectioning-5-face ((((class color) (background dark)) (:underline t :weight normal))) t))
+ '(font-latex-sectioning-5-face ((((class color) (background dark)) (:underline t :weight normal))) t)
+ '(helm-selection ((t (:background "black" :underline t)))))
 ;;(require 'column-marker)
 (put 'dired-find-alternate-file 'disabled nil)
 

@@ -99,8 +99,9 @@
 
 ;; Projectile
 (projectile-global-mode)
-(global-set-key "\C-c\C-f" 'projectile-find-file)
 (setq projectile-tags-command "exuberant-ctags -Re -f %s %s")
+(require 'helm-projectile)
+(helm-projectile-on)
 ;; projectile-rails
 (add-hook 'projectile-mode-hook 'projectile-rails-on)
 
