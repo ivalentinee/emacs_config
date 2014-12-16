@@ -105,21 +105,19 @@
 ;; projectile-rails
 (add-hook 'projectile-mode-hook 'projectile-rails-on)
 
+;; Helm
+(helm-mode 1)
+
 ;; etags-select
 (global-set-key (kbd "C-M-.") 'etags-select-find-tag)
 
 ;; IDO
-(ido-mode t)
+;; (ido-mode t)
 (ido-vertical-mode t)
 
 ;; flx-ido
 (flx-ido-mode 1)
 (setq flx-ido-use-faces nil)
-
-;; SMEX (IDO M-x)
-(smex-initialize)
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key "\C-c\C-m" 'smex)
 
 ;; ibuffer-vc
 (add-hook 'ibuffer-hook
