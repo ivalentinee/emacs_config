@@ -17,6 +17,7 @@
  '(global-linum-mode nil)
  '(indent-tabs-mode nil)
  '(js2-basic-offset 2)
+ '(jsx-indent-level 2)
  '(left-margin 0)
  '(org-agenda-files (quote ("~/Dropbox/edu/diploma/notes.org")))
  '(org-export-html-toplevel-hlevel 1 t)
