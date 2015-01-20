@@ -1,8 +1,8 @@
 ;; package-settings.el
 
 (require 'package)
-(add-to-list 'package-archives
-  '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("melpa" . "http://melpa.milkbox.net/packages/")))
 
 (package-initialize)
 
