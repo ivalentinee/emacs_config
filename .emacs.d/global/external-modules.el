@@ -3,16 +3,14 @@
 (require 'haml-mode)
 (require 'coffee-mode)
 
-;; Disable linum-mode for some modes
-(require 'linum-off)
-
 ;; 80-character line
-;; (require 'fill-column-indicator)
-;; (add-hook 'emacs-lisp-mode-hook 'fci-mode)
-;; (add-hook 'c-mode-hook 'fci-mode)
-;; (add-hook 'ruby-mode-hook 'fci-mode)
-;; (add-hook 'tuareg-mode-hook 'fci-mode)
-;; (add-hook 'haskell-mode-hook 'fci-mode)
+(require 'fill-column-indicator)
+(add-hook 'emacs-lisp-mode-hook 'fci-mode)
+(add-hook 'c-mode-hook 'fci-mode)
+(add-hook 'ruby-mode-hook 'fci-mode)
+(add-hook 'tuareg-mode-hook 'fci-mode)
+(add-hook 'haskell-mode-hook 'fci-mode)
+(add-hook 'js2-mode-hook 'fci-mode)
 
 ;; ruby-block
 (require 'ruby-block)
@@ -33,15 +31,8 @@
 ;; SCSS
 (setq scss-compile-at-save nil)
 
-;; javascript
-(add-hook 'js-mode-hook 'js2-minor-mode)
-
 ;; Cua-mode
 (cua-selection-mode t)
-
-;; Multi-term
-(require 'multi-term)
-(setq multi-term-program "/bin/bash")
 
 ;; Auto complete
 (require 'auto-complete)

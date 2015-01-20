@@ -119,7 +119,6 @@
 (depends-on "sws-mode")
 (depends-on "tuareg")
 (depends-on "vagrant")
-(depends-on "w3m")
 (depends-on "web-mode")
 (depends-on "yaml-mode")
 (depends-on "yasnippet")

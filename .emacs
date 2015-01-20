@@ -1,4 +1,3 @@
-(add-to-list 'load-path "~/.emacs.d/")
 (add-to-list 'load-path "~/.emacs.d/global")
 (add-to-list 'load-path "~/.emacs.d/local")
 
@@ -19,7 +18,6 @@
  '(js2-basic-offset 2)
  '(jsx-indent-level 2)
  '(left-margin 0)
- '(org-agenda-files (quote ("~/Dropbox/edu/diploma/notes.org")))
  '(org-export-html-toplevel-hlevel 1)
  '(preview-default-option-list (quote ("displaymath" "floats" "graphics" "textmath" "sections" "footnotes")))
  '(preview-fast-conversion t)

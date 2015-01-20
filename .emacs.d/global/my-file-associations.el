@@ -13,4 +13,6 @@
 
 (add-to-list 'auto-mode-alist '("\\.sibilant\\'" . lisp-mode))
 
+(add-to-list 'auto-mode-alist '("\\.js\\.json\\'" . js2-mode))
+
 (provide 'my-file-associations)
