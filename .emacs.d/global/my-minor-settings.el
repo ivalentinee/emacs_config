@@ -5,6 +5,9 @@
 ;; no startup msg
 (setq inhibit-startup-message t)
 
+;; disable menu
+(menu-bar-mode -1)
+
 ;; y/n instead of yes/no
 (defalias 'yes-or-no-p 'y-or-n-p)
 
