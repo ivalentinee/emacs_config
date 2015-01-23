@@ -152,6 +152,9 @@
 ;; macro-math
 (global-set-key "\C-x=" 'macro-math-eval-region)
 
+;; Anzu
+(global-anzu-mode +1)
+
 ;; web-mode
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
