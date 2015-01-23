@@ -96,6 +96,12 @@
 ;; projectile-rails
 (add-hook 'projectile-mode-hook 'projectile-rails-on)
 
+;; Sr-Speedbar
+(define-key global-map (kbd "C-c i u") 'string-inflection-underscore)
+(setq sr-speedbar-right-side nil)
+(setq speedbar-show-unknown-files t)
+(global-set-key (kbd "C-c s") 'sr-speedbar-toggle)
+
 ;; Helm
 (helm-mode 1)
 
