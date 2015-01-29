@@ -171,6 +171,9 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 
+;; js-mode
+(setq js-indent-level 2)
+
 (require 'git-bindings)
 (require 'yas-settings)
 
