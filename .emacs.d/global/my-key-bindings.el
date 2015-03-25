@@ -17,6 +17,9 @@
 (global-set-key "\C-x\C-k" 'kill-region)
 (global-set-key "\C-c\C-k" 'kill-region)
 
+;; Command menu
+(global-set-key "\C-cm" 'execute-extended-command)
+
 ;; paragraphs forward & baskward
 (global-set-key "\M-p" 'backward-paragraph)
 (global-set-key "\M-n" 'forward-paragraph)
