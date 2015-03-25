@@ -1,5 +1,5 @@
-(source melpa)
 (source gnu)
+(source melpa)
 
 (depends-on "2048-game")
 (depends-on "ac-dabbrev")
@@ -72,6 +72,8 @@
 (depends-on "inf-ruby")
 (depends-on "inflections")
 (depends-on "jade-mode")
+(depends-on "java-snippets")
+(depends-on "javadoc-lookup")
 (depends-on "js2-mode")
 (depends-on "js2-refactor")
 (depends-on "json-mode")
