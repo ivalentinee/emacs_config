@@ -1,9 +1,6 @@
 (require 'yasnippet)
 
-(add-hook 'prog-mode-hook
-          '(lambda ()
-             (yas-minor-mode)))
-
+(yas-global-mode)
 (yas-reload-all)
 
 (provide 'yas-settings)
