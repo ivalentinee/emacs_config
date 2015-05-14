@@ -1,0 +1,80 @@
+* Emacs config
+My emacs config. And I don't think it's useful for anyone but me.
+
+** Version
+
+Current Emacs version: 24.4
+
+** Installation
+
+Installation script requires *python* (for
+[[http://cask.github.io/][Cask]]), *git* and of course *Emacs*. To
+install emacs config download
+[[https://raw.github.com/vemperor/emacs_config/master/install.sh][install.sh]]
+
+#+BEGIN_EXAMPLE
+    $ wget https://raw.github.com/vemperor/emacs_config/master/install.sh
+#+END_EXAMPLE
+
+Configure paths
+
+#+BEGIN_EXAMPLE
+    $ emacs install.sh
+#+END_EXAMPLE
+
+Run script
+
+#+BEGIN_EXAMPLE
+    $ chmod u+x install.sh && ./install.sh
+#+END_EXAMPLE
+
+** Packages
+
+In order to autoinstall all packages you need to install
+[[http://cask.github.io/][Cask]]. After [[http://cask.github.io/][Cask]]
+installation go to *.emacs.d* directory & execute
+
+#+BEGIN_EXAMPLE
+    $ cask
+#+END_EXAMPLE
+
+*** Update cask file
+
+To update Cask file do
+
+#+BEGIN_EXAMPLE
+    M-x pallet-init
+#+END_EXAMPLE
+
+** Colors
+
+All colors are configured for
+[[https://github.com/tovbinm/emacs-24-mac/blob/master/etc/themes/misterioso-theme.el][Misterioso]]
+theme and "white on black" terminals.
+
+*UPD* Changed theme to /deeper-blue/. Everything looks fine.
+
+** Xdg (Gnome/KDE/etc) menu
+
+To add Emacs Client to Xdg menu copy .local from repo to your =HOME=
+directory
+
+#+BEGIN_EXAMPLE
+    $ cp -r path_to_repo/emacs_client/.local/ ~/
+#+END_EXAMPLE
+
+and add executable permissions for all users for .desktop file:
+
+#+BEGIN_EXAMPLE
+    $ chmod a+x .local/share/applications/emacsclient.desktop
+#+END_EXAMPLE
+
+** TODO
+
+Describe useful bindings && workflow.
+
+** Sources
+
+I took a lot of .emacs code from
+[[http://emacs-fu.blogspot.ru/][emacs-fu]]. Another one source is, of
+course, [[http://www.emacswiki.org/][Emacs Wiki]].
