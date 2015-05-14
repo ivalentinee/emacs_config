@@ -35,6 +35,8 @@
 ** IDO
 [[http://www.emacswiki.org/InteractivelyDoThings][InteractivelyDoThings]]
 
+*Сейчас вместо IDO использую [[https://github.com/emacs-helm/helm][helm]]*
+
 Полезнейшая штука, ибо даёт fuzzy-completition при работе со многими вещами. Встроен в Emacs.
 
 Для того, чтобы включить его везде добавляем в конфиг строки
