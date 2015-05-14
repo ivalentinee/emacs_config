@@ -12,21 +12,21 @@ Installation script requires *python* (for
 install emacs config download
 [[https://raw.github.com/vemperor/emacs_config/master/install.sh][install.sh]]
 
-#+BEGIN_EXAMPLE
+#+BEGIN_SRC shell
     $ wget https://raw.github.com/vemperor/emacs_config/master/install.sh
-#+END_EXAMPLE
+#+END_SRC
 
 Configure paths
 
-#+BEGIN_EXAMPLE
+#+BEGIN_SRC shell
     $ emacs install.sh
-#+END_EXAMPLE
+#+END_SRC
 
 Run script
 
-#+BEGIN_EXAMPLE
+#+BEGIN_SRC shell
     $ chmod u+x install.sh && ./install.sh
-#+END_EXAMPLE
+#+END_SRC
 
 ** Packages
 
@@ -34,9 +34,9 @@ In order to autoinstall all packages you need to install
 [[http://cask.github.io/][Cask]]. After [[http://cask.github.io/][Cask]]
 installation go to *.emacs.d* directory & execute
 
-#+BEGIN_EXAMPLE
+#+BEGIN_SRC shell
     $ cask
-#+END_EXAMPLE
+#+END_SRC
 
 *** Update cask file
 
@@ -59,15 +59,15 @@ theme and "white on black" terminals.
 To add Emacs Client to Xdg menu copy .local from repo to your =HOME=
 directory
 
-#+BEGIN_EXAMPLE
+#+BEGIN_SRC shell
     $ cp -r path_to_repo/emacs_client/.local/ ~/
-#+END_EXAMPLE
+#+END_SRC
 
 and add executable permissions for all users for .desktop file:
 
-#+BEGIN_EXAMPLE
+#+BEGIN_SRC shell
     $ chmod a+x .local/share/applications/emacsclient.desktop
-#+END_EXAMPLE
+#+END_SRC
 
 ** TODO
 
