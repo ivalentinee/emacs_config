@@ -19,7 +19,7 @@
 - M-p M-n --- для переходов по абзацам (блокам). *ВНИМАНИЕ* этих комбинаций нет ванильном Emacs, делал сам. [[https://github.com/vemperor/emacs_config/blob/master/.emacs.d/global/my-key-bindings.el#L20][Ссылка на соответствующий раздел конфига]].
 - [[https://github.com/winterTTr/ace-jump-mode][Ace-jump-mode]] --- удобный режим для перепрыгивания в пределах видимости (подробности по ссылке).
 * Полезные режимы, пакеты и вообще полезности
-Тут, пожалуй, можно обратиться к [[https://github.com/vemperor/emacs_config/blob/master/.emacs.d/Cask][списку пакетов]], но он большой и почти целиком есть в [[https://sites.google.com/site/steveyegge2/effective-emacs][awesome emacs]], так что не буду повторяться, поэтому опишу наиболее важные для меня кастомизации, пакеты и прочее
+Тут, пожалуй, можно обратиться к [[https://github.com/vemperor/emacs_config/blob/master/.emacs.d/Cask][списку пакетов]], но он большой и почти целиком есть в [[https://github.com/emacs-tw/awesome-emacs][awesome emacs]], так что не буду повторяться, поэтому опишу наиболее важные для меня кастомизации, пакеты и прочее
 
 ** Немного об установке пакетов
 Для установки пакетов я пользуюсь следующим сценарием:
