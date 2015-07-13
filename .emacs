@@ -6,17 +6,22 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-names-vector
+   ["#ecf0f1" "#e74c3c" "#2ecc71" "#f1c40f" "#2492db" "#9b59b6" "#1abc9c" "#2c3e50"])
  '(auto-save-default nil)
  '(coffee-tab-width 2)
  '(current-language-environment "Russian")
  '(custom-safe-themes
    (quote
-    ("3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "756597b162f1be60a12dbd52bab71d40d6a2845a3e3c2584c6573ee9c332a66e" "6a37be365d1d95fad2f4d185e51928c789ef7a4ccf17e7ca13ad63a8bf5b922f" "516029471adacb3a933acb16589efa2efa9886ad86a4dc0a503da94695c19a4e" default)))
+    ("3b24f986084001ae46aa29ca791d2bc7f005c5c939646d2b800143526ab4d323" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "756597b162f1be60a12dbd52bab71d40d6a2845a3e3c2584c6573ee9c332a66e" "6a37be365d1d95fad2f4d185e51928c789ef7a4ccf17e7ca13ad63a8bf5b922f" "516029471adacb3a933acb16589efa2efa9886ad86a4dc0a503da94695c19a4e" default)))
+ '(fci-rule-color "#f1c40f")
  '(font-latex-fontify-script t)
  '(global-auto-revert-mode t)
  '(global-auto-revert-non-file-buffers t)
  '(global-highline-mode nil)
  '(global-linum-mode nil)
+ '(hl-paren-background-colors (quote ("#2492db" "#95a5a6" nil)))
+ '(hl-paren-colors (quote ("#ecf0f1" "#ecf0f1" "#c0392b")))
  '(indent-tabs-mode nil)
  '(js2-basic-offset 2)
  '(jsx-indent-level 2)
@@ -35,6 +40,10 @@
      (ruby-compilation-executable . "ruby1.9")
      (ruby-compilation-executable . "rbx")
      (ruby-compilation-executable . "jruby"))))
+ '(sml/active-background-color "#34495e")
+ '(sml/active-foreground-color "#ecf0f1")
+ '(sml/inactive-background-color "#dfe4ea")
+ '(sml/inactive-foreground-color "#34495e")
  '(sml/show-file-name nil)
  '(speedbar-default-position (quote left))
  '(speedbar-use-images nil)
@@ -42,6 +51,22 @@
  '(tab-width 4)
  '(tex-fontify-script t)
  '(tool-bar-mode nil)
+ '(vc-annotate-background "#ecf0f1")
+ '(vc-annotate-color-map
+   (quote
+    ((30 . "#e74c3c")
+     (60 . "#c0392b")
+     (90 . "#e67e22")
+     (120 . "#d35400")
+     (150 . "#f1c40f")
+     (180 . "#d98c10")
+     (210 . "#2ecc71")
+     (240 . "#27ae60")
+     (270 . "#1abc9c")
+     (300 . "#16a085")
+     (330 . "#2492db")
+     (360 . "#0a74b9"))))
+ '(vc-annotate-very-old-color "#0a74b9")
  '(web-mode-code-indent-offset 2)
  '(web-mode-enable-auto-closing nil)
  '(web-mode-enable-auto-indentation nil)

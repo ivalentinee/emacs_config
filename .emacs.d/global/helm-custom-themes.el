@@ -14,4 +14,11 @@
                       :background "powder blue"
                       :foreground "black"))
 
+(defun helm-apply-dark-theme ()
+  "applies dark theme to helm buffers"
+  (interactive)
+  (set-face-attribute 'helm-match nil
+                      :background nil
+                      :foreground "gold1"))
+
 (provide 'helm-custom-themes)
