@@ -41,6 +41,7 @@
 (depends-on "fancy-narrow")
 (depends-on "fill-column-indicator")
 (depends-on "findr")
+(depends-on "flatui-theme")
 (depends-on "flx")
 (depends-on "flx-ido")
 (depends-on "flycheck")
