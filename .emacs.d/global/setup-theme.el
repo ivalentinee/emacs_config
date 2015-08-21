@@ -27,6 +27,17 @@
   (load-theme light-theme)
   (helm-apply-light-theme))
 
+
+(defun go-to-terminal ()
+  "setup colors for white-on-black terminal"
+  (interactive)
+  (disable-theme dark-theme)
+  (disable-theme dark-client-theme)
+  (disable-theme light-theme)
+  (sml/apply-theme "respectful")
+  (helm-apply-terminal-theme))
+
+
 (go-to-dark)
 
 (provide 'setup-theme)
