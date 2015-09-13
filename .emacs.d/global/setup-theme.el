@@ -17,6 +17,7 @@
   (if (daemonp)
       (load-theme dark-client-theme)
     (if window-system (load-theme dark-theme)))
+  (sml/apply-theme "dark")
   (helm-apply-dark-theme))
 
 (defun go-to-light ()
@@ -25,6 +26,7 @@
   (disable-theme dark-theme)
   (disable-theme dark-client-theme)
   (load-theme light-theme)
+  (sml/apply-theme "light")
   (helm-apply-light-theme))
 
 
