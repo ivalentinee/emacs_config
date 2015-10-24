@@ -37,6 +37,7 @@
   (disable-theme dark-client-theme)
   (disable-theme light-theme)
   (sml/apply-theme "respectful")
+  (global-set-key (kbd "C-h") 'delete-backward-char)
   (helm-apply-terminal-theme))
 
 
