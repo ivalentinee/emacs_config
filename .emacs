@@ -10,10 +10,11 @@
    ["#ecf0f1" "#e74c3c" "#2ecc71" "#f1c40f" "#2492db" "#9b59b6" "#1abc9c" "#2c3e50"])
  '(auto-save-default nil)
  '(coffee-tab-width 2)
+ '(css-indent-offset 2)
  '(current-language-environment "Russian")
  '(custom-safe-themes
    (quote
-    ("3b24f986084001ae46aa29ca791d2bc7f005c5c939646d2b800143526ab4d323" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "756597b162f1be60a12dbd52bab71d40d6a2845a3e3c2584c6573ee9c332a66e" "6a37be365d1d95fad2f4d185e51928c789ef7a4ccf17e7ca13ad63a8bf5b922f" "516029471adacb3a933acb16589efa2efa9886ad86a4dc0a503da94695c19a4e" default)))
+    ("c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "3b24f986084001ae46aa29ca791d2bc7f005c5c939646d2b800143526ab4d323" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "756597b162f1be60a12dbd52bab71d40d6a2845a3e3c2584c6573ee9c332a66e" "6a37be365d1d95fad2f4d185e51928c789ef7a4ccf17e7ca13ad63a8bf5b922f" "516029471adacb3a933acb16589efa2efa9886ad86a4dc0a503da94695c19a4e" default)))
  '(fci-rule-color "#f1c40f")
  '(font-latex-fontify-script t)
  '(global-auto-revert-mode t)
@@ -116,6 +117,7 @@
 (require 'my-file-associations)
 (require 'my-minor-settings)
 (require 'org-mode-settings)
+(require 'gpg-settings)
 (require 'setup-theme)
 (require 'insert-name)
 (require 'safe-local-variables)
