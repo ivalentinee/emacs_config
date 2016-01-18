@@ -122,6 +122,7 @@
 (require 'insert-name)
 (require 'safe-local-variables)
 (require 'helm-custom-themes)
+(require 'switch-font-size)
 
 (require 'customized-org-html)
 
