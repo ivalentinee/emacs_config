@@ -5,7 +5,7 @@
 (global-set-key (kbd "C-z") 'undo)
 (global-set-key (kbd "<C-tab>") 'other-window)
 
-;; Previous && Next buffer
+;; previous && next buffer
 (global-set-key (kbd "M-[") 'previous-buffer)
 (global-set-key (kbd "M-]") 'next-buffer)
 
@@ -20,7 +20,7 @@
 ;; Command menu
 (global-set-key "\C-cm" 'execute-extended-command)
 
-;; paragraphs forward & baskward
+;; paragraphs forward & backward
 (global-set-key "\M-p" 'backward-paragraph)
 (global-set-key "\M-n" 'forward-paragraph)
 ;; and for slime

@@ -16,6 +16,9 @@
 (require 'ruby-block)
 (ruby-block-mode t)
 
+;; rubocop-mode for ruby
+(add-hook 'ruby-mode-hook #'rubocop-mode)
+
 ;; expand-region
 (global-set-key (kbd "C-=") 'er/expand-region)
 
@@ -100,6 +103,11 @@
 (define-key global-map (kbd "C-c i c") 'string-inflection-camelcase)
 (define-key global-map (kbd "C-c i U") 'string-inflection-upcase)
 
+;; Helm
+(helm-mode 1)
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+
 ;; Projectile
 (projectile-global-mode)
 (setq projectile-tags-command "exuberant-ctags -Re -f %s %s")
@@ -113,9 +121,6 @@
 (setq sr-speedbar-right-side nil)
 (setq speedbar-show-unknown-files t)
 (global-set-key (kbd "C-c s") 'sr-speedbar-toggle)
-
-;; Helm
-(helm-mode 1)
 
 ;; etags-select
 (global-set-key (kbd "C-M-.") 'etags-select-find-tag)
