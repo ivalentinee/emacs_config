@@ -37,6 +37,7 @@
 (depends-on "dash")
 (depends-on "dired-details")
 (depends-on "direx")
+(depends-on "dumb-jump")
 (depends-on "enh-ruby-mode")
 (depends-on "epl")
 (depends-on "etags-select")

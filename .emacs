@@ -75,6 +75,7 @@
  '(web-mode-enable-auto-pairing nil)
  '(web-mode-enable-auto-quoting nil)
  '(web-mode-enable-css-colorization nil)
+ '(web-mode-markup-indent-offset 2)
  '(winner-dont-bind-my-keys t)
  '(winner-mode t nil (winner)))
 (custom-set-faces
