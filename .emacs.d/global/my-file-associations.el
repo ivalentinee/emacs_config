@@ -13,7 +13,7 @@
 
 (add-to-list 'auto-mode-alist '("\\.sibilant\\'" . lisp-mode))
 
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.js$" . web-mode))
 
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
 
