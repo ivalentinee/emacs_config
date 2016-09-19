@@ -42,8 +42,6 @@
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/dict")
 (require 'auto-complete-config)
 (ac-config-default)
-(require 'auto-complete-exuberant-ctags)
-(ac-exuberant-ctags-setup)
 (auto-complete-mode t)
 
 ;; Aggressive indent
@@ -113,7 +111,6 @@
 
 ;; Projectile
 (projectile-global-mode)
-(setq projectile-tags-command "exuberant-ctags -Re -f %s %s")
 (require 'helm-projectile)
 (helm-projectile-on)
 ;; projectile-rails
@@ -124,9 +121,6 @@
 (setq sr-speedbar-right-side nil)
 (setq speedbar-show-unknown-files t)
 (global-set-key (kbd "C-c s") 'sr-speedbar-toggle)
-
-;; etags-select
-(global-set-key (kbd "C-M-.") 'etags-select-find-tag)
 
 ;; IDO
 ;; (ido-mode t)
