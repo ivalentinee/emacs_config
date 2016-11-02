@@ -122,6 +122,7 @@
 (helm-projectile-on)
 ;; projectile-rails
 (add-hook 'projectile-mode-hook 'projectile-rails-on)
+(add-hook 'ruby-mode-hook 'projectile-rails-on)
 
 ;; Sr-Speedbar
 (define-key global-map (kbd "C-c i u") 'string-inflection-underscore)
