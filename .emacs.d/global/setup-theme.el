@@ -1,19 +1,18 @@
 (require 'helm-custom-themes)
 
+(defvar custom-font "Liberation Mono 13")
+
 (defvar dark-client-theme 'deeper-blue)
 (defvar dark-theme 'tango-dark)
+(defvar light-client-theme 'adwaita)
 (defvar light-theme 'flatui)
-
-(if (daemonp)
-    (add-hook 'after-make-frame-functions
-              (lambda (frame)
-                (load-theme dark-client-theme)))
-  (if window-system (load-theme dark-theme)))
 
 (defun go-to-dark ()
   "setup light-on-dark colors"
   (interactive)
   (disable-theme light-theme)
+  (disable-theme light-client-theme)
+  (set-face-background 'hl-line "black")
   (if (daemonp)
       (load-theme dark-client-theme)
     (if window-system (load-theme dark-theme)))
@@ -25,10 +24,12 @@
   (interactive)
   (disable-theme dark-theme)
   (disable-theme dark-client-theme)
-  (load-theme light-theme)
+  (set-face-background 'hl-line "gainsboro")
+  (if (daemonp)
+      (load-theme light-client-theme)
+    (if window-system (load-theme light-theme)))
   (sml/apply-theme "light")
   (helm-apply-light-theme))
-
 
 (defun go-to-terminal ()
   "setup colors for white-on-black terminal"
@@ -41,6 +42,6 @@
   (helm-apply-terminal-theme))
 
 
-(go-to-dark)
+(go-to-light)
 
 (provide 'setup-theme)
