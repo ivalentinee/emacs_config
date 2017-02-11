@@ -1,6 +1,6 @@
 (require 'helm-custom-themes)
 
-(defvar custom-font "Liberation Mono 13")
+(defvar custom-default-font "Liberation Mono 13")
 
 (defvar dark-client-theme 'deeper-blue)
 (defvar dark-theme 'tango-dark)
@@ -43,5 +43,6 @@
 
 
 (go-to-light)
+(set-default-font custom-default-font)
 
 (provide 'setup-theme)
