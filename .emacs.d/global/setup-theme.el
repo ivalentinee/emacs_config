@@ -7,6 +7,10 @@
 (defvar light-client-theme 'adwaita)
 (defvar light-theme 'flatui)
 
+(defun set-custom-font (custom-font)
+  (add-to-list 'default-frame-alist (cons 'font custom-font))
+  (set-default-font custom-font))
+
 (defun go-to-dark ()
   "setup light-on-dark colors"
   (interactive)
@@ -41,8 +45,7 @@
   (global-set-key (kbd "C-h") 'delete-backward-char)
   (helm-apply-terminal-theme))
 
-
+(set-custom-font custom-default-font)
 (go-to-light)
-(set-default-font custom-default-font)
 
 (provide 'setup-theme)
