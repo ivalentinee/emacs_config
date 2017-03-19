@@ -37,13 +37,6 @@
 ;; Cua-mode
 (cua-selection-mode t)
 
-;; Auto complete
-(require 'auto-complete)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/dict")
-(require 'auto-complete-config)
-(ac-config-default)
-(auto-complete-mode t)
-
 ;; Aggressive indent
 (add-hook 'emacs-lisp-mode-hook #'aggressive-indent-mode)
 (add-hook 'lisp-mode-hook #'aggressive-indent-mode)
@@ -52,9 +45,6 @@
 ;; ace-jump
 (define-key global-map (kbd "C-c C-SPC") 'ace-jump-mode)
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
-
-;; dumb-jump
-(dumb-jump-mode)
 
 ;; Parentheses mode
 (require 'highlight-parentheses)
@@ -124,20 +114,6 @@
 (add-hook 'projectile-mode-hook 'projectile-rails-on)
 (add-hook 'ruby-mode-hook 'projectile-rails-on)
 
-;; Sr-Speedbar
-(define-key global-map (kbd "C-c i u") 'string-inflection-underscore)
-(setq sr-speedbar-right-side nil)
-(setq speedbar-show-unknown-files t)
-(global-set-key (kbd "C-c s") 'sr-speedbar-toggle)
-
-;; IDO
-;; (ido-mode t)
-(ido-vertical-mode t)
-
-;; flx-ido
-(flx-ido-mode 1)
-(setq flx-ido-use-faces nil)
-
 ;; ibuffer-vc
 (add-hook 'ibuffer-hook
   (lambda ()
@@ -158,22 +134,6 @@
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-cb" 'org-iswitchb)
 (global-set-key "\C-ca" 'org-agenda)
-
-;; google-translate
-(require 'google-translate)
-(global-set-key "\C-ct" 'google-translate-at-point)
-(global-set-key "\C-cT" 'google-translate-query-translate)
-
-;; w3m
-(setq browse-url-browser-function 'w3m-browse-url)
-(autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
-(setq w3m-use-cookies t)
-
-;; List Registers
-(require 'list-register)
-(global-set-key (kbd "C-x r v") 'list-register)
-(put 'narrow-to-region 'disabled nil)
-(put 'narrow-to-page 'disabled nil)
 
 ;; Goto last change
 (global-set-key "\C-x\C-\\" 'goto-last-change)

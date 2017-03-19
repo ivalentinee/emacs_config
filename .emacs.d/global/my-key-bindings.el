@@ -5,10 +5,6 @@
 (global-set-key (kbd "C-z") 'undo)
 (global-set-key (kbd "<C-tab>") 'other-window)
 
-;; previous && next buffer
-(global-set-key (kbd "M-[") 'previous-buffer)
-(global-set-key (kbd "M-]") 'next-buffer)
-
 ;; iBuffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
@@ -16,9 +12,6 @@
 (global-set-key "\C-w" 'backward-kill-word)
 (global-set-key "\C-x\C-k" 'kill-region)
 (global-set-key "\C-c\C-k" 'kill-region)
-
-;; Command menu
-(global-set-key "\C-cm" 'execute-extended-command)
 
 ;; paragraphs forward & backward
 (global-set-key "\M-p" 'backward-paragraph)
