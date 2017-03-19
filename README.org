@@ -7,44 +7,11 @@ Current Emacs version: 24.4
 
 ** Installation
 
-Installation script requires *python* (for
-[[http://cask.github.io/][Cask]]), *git* and of course *Emacs*. To
-install emacs config download
-[[https://raw.github.com/vemperor/emacs_config/master/install.sh][install.sh]]
-
-#+BEGIN_SRC shell
-    $ wget https://raw.github.com/vemperor/emacs_config/master/install.sh
+*No more Cask!*
+Just clone this repo to ~/ and run from emacs
+#+BEGIN_SRC lisp
+package-install-selected-packages
 #+END_SRC
-
-Configure paths
-
-#+BEGIN_SRC shell
-    $ emacs install.sh
-#+END_SRC
-
-Run script
-
-#+BEGIN_SRC shell
-    $ chmod u+x install.sh && ./install.sh
-#+END_SRC
-
-** Packages
-
-In order to autoinstall all packages you need to install
-[[http://cask.github.io/][Cask]]. After [[http://cask.github.io/][Cask]]
-installation go to *.emacs.d* directory & execute
-
-#+BEGIN_SRC shell
-    $ cask
-#+END_SRC
-
-*** Update cask file
-
-To update Cask file do
-
-#+BEGIN_EXAMPLE
-    M-x pallet-init
-#+END_EXAMPLE
 
 ** Colors
 
@@ -68,13 +35,3 @@ and add executable permissions for all users for .desktop file:
 #+BEGIN_SRC shell
     $ chmod a+x .local/share/applications/emacsclient.desktop
 #+END_SRC
-
-** TODO
-
-Describe useful bindings && workflow.
-
-** Sources
-
-I took a lot of .emacs code from
-[[http://emacs-fu.blogspot.ru/][emacs-fu]]. Another one source is, of
-course, [[http://www.emacswiki.org/][Emacs Wiki]].
