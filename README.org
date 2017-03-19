@@ -3,12 +3,14 @@ My emacs config. And I don't think it's useful for anyone but me.
 
 ** Version
 
-Current Emacs version: 24.4
+Current Emacs version: 25.1
 
 ** Installation
 
-*No more Cask!*
-Just clone this repo to ~/ and run from emacs
+*No more Cask!*\\
+*No more install.sh!*
+
+Just clone this repo and put '.emacs' and '.emacs.d' to ~/ and then run from emacs
 #+BEGIN_SRC lisp
 package-install-selected-packages
 #+END_SRC
