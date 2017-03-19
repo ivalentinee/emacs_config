@@ -16,12 +16,22 @@ package-install-selected-packages
 #+END_SRC
 
 ** Colors
+As written in [[https://github.com/vemperor/emacs_config/blob/master/.emacs.d/global/setup-theme.el][this file]] there are 3 UI schemes using 5 color themes.
 
-All colors are configured for
-[[https://github.com/tovbinm/emacs-24-mac/blob/master/etc/themes/misterioso-theme.el][Misterioso]]
-theme and "white on black" terminals.
+Schemes are =light=, =dark=, and terminal. There are three corresponding interactive functions to switch between schemes:
+#+BEGIN_EXAMPLE
+go-to-light
+go-to-dark
+go-to-terminal
+#+END_EXAMPLE
 
-*UPD* Changed theme to /deeper-blue/. Everything looks fine.
+=Light= scheme uses =adwaita= for emacs-client and =flatui= for standalone emacs.
+
+=Dark= scheme uses =deeper-blue= for emacs-client and =tango-dark= for standalone emacs.
+
+=Terminal= disables all themes to set emacs look "default".
+
+Emacs starts with =light= scheme.
 
 ** Xdg (Gnome/KDE/etc) menu
 
