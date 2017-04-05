@@ -44,7 +44,7 @@
 
 ;; avy
 (define-key global-map (kbd "C-c C-SPC") 'avy-goto-word-1)
-(define-key global-map (kbd "C-c SPC") 'avy-goto-word-1)
+(define-key global-map (kbd "C-c SPC") 'avy-goto-char)
 
 ;; Parentheses mode
 (require 'highlight-parentheses)
