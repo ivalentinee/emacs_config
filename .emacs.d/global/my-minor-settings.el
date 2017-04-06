@@ -21,7 +21,7 @@
 (delete-selection-mode t)
 
 ;; delete trailing whitespaces before save
-(add-hook 'ruby-mode-hook (lambda () (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
+(add-hook 'prog-mode-hook (lambda () (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
 
 ;; ruby-fix
 (add-hook 'ruby-mode-hook (lambda () (setq ruby-insert-encoding-magic-comment nil)))
