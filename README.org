@@ -47,3 +47,8 @@ and add executable permissions for all users for .desktop file:
 #+BEGIN_SRC shell
     $ chmod a+x .local/share/applications/emacsclient.desktop
 #+END_SRC
+
+** Mode-specific notes
+
+*** Elixir
+[[https://github.com/tonini/alchemist.el][Alchemist.el]] commands are configured to run inside "web" docker-compose container, however host-installed elixir is required to have [[https://company-mode.github.io/][company-mode]] completition. That's sad, actually =(
