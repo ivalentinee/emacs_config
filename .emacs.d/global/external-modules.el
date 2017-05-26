@@ -42,6 +42,9 @@
 (add-hook 'lisp-mode-hook #'aggressive-indent-mode)
 (add-hook 'slime-mode-hook #'aggressive-indent-mode)
 
+;; company-mode
+(add-hook 'prog-mode-hook (lambda () (company-mode)))
+
 ;; avy
 (define-key global-map (kbd "C-c C-SPC") 'avy-goto-word-1)
 (define-key global-map (kbd "C-c SPC") 'avy-goto-char)
