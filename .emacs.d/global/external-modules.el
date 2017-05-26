@@ -167,3 +167,9 @@
 (require 'yas-settings)
 
 (provide 'external-modules)
+
+;; alchemist
+(setq alchemist-mix-command "/usr/local/bin/docker-compose run --rm web mix")
+(setq alchemist-iex-program-name "/usr/local/bin/docker-compose run --rm web iex")
+(setq alchemist-execute-command "/usr/local/bin/docker-compose run --rm web elixir")
+(setq alchemist-compile-command "/usr/local/bin/docker-compose run --rm web elixirc")

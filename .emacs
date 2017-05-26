@@ -37,7 +37,7 @@
  '(org-export-html-toplevel-hlevel 1 t)
  '(package-selected-packages
    (quote
-    (avy elixir-mode elixir-yasnippets 2048-game ace-window ag aggressive-indent anzu autopair coffee-mode dired-details direx expand-region fill-column-indicator fireplace flatui-theme gitconfig-mode goto-last-change haml-mode helm helm-ag helm-core helm-projectile highlight-parentheses ibuffer-vc js2-mode js2-refactor json-mode json-reformat json-snatcher less-css-mode lua-mode macro-math magit magit-popup markdown-mode markdown-mode+ mo-git-blame multi-term multiple-cursors nginx-mode paredit php-mode projectile projectile-rails rails-log-mode rake restclient rspec-mode ruby-block ruby-compilation ruby-end sass-mode scss-mode slim-mode slime smart-mode-line string-inflection urlenc web-mode yaml-mode yasnippet)))
+    (alchemist avy elixir-mode elixir-yasnippets 2048-game ace-window ag aggressive-indent anzu autopair coffee-mode dired-details direx expand-region fill-column-indicator fireplace flatui-theme gitconfig-mode goto-last-change haml-mode helm helm-ag helm-core helm-projectile highlight-parentheses ibuffer-vc js2-mode js2-refactor json-mode json-reformat json-snatcher less-css-mode lua-mode macro-math magit magit-popup markdown-mode markdown-mode+ mo-git-blame multi-term multiple-cursors nginx-mode paredit php-mode projectile projectile-rails rails-log-mode rake restclient rspec-mode ruby-block ruby-compilation ruby-end sass-mode scss-mode slim-mode slime smart-mode-line string-inflection urlenc web-mode yaml-mode yasnippet)))
  '(preview-default-option-list
    (quote
     ("displaymath" "floats" "graphics" "textmath" "sections" "footnotes")))
