@@ -18,5 +18,7 @@
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
 
 (add-to-list 'auto-mode-alist '("Dockerfile" . conf-mode))
+(add-to-list 'auto-mode-alist '("\\..*ignore" . conf-mode))
+
 
 (provide 'my-file-associations)
