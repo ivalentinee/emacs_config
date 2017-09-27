@@ -3,15 +3,6 @@
 (require 'haml-mode)
 (require 'coffee-mode)
 
-;; 80-character line
-(require 'fill-column-indicator)
-(add-hook 'emacs-lisp-mode-hook 'fci-mode)
-(add-hook 'c-mode-hook 'fci-mode)
-(add-hook 'ruby-mode-hook 'fci-mode)
-(add-hook 'tuareg-mode-hook 'fci-mode)
-(add-hook 'haskell-mode-hook 'fci-mode)
-(add-hook 'js2-mode-hook 'fci-mode)
-
 ;; ruby-block
 (require 'ruby-block)
 (ruby-block-mode t)

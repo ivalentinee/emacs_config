@@ -13,12 +13,13 @@
 
 (add-to-list 'auto-mode-alist '("\\.sibilant\\'" . lisp-mode))
 
-(add-to-list 'auto-mode-alist '("\\.js$" . web-mode))
-
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
 
 (add-to-list 'auto-mode-alist '("Dockerfile" . conf-mode))
 (add-to-list 'auto-mode-alist '("\\..*ignore" . conf-mode))
+
+(add-to-list 'auto-mode-alist '("\\.restclient$" . restclient-mode))
 
 
 (provide 'my-file-associations)
