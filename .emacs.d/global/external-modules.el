@@ -162,6 +162,9 @@
 ;; js-mode
 (setq js-indent-level 2)
 
+;; js2-mode
+(setq js2-strict-trailing-comma-warning nil)
+
 (require 'git-bindings)
 (require 'yas-settings)
 
