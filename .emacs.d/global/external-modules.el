@@ -126,9 +126,9 @@
 (global-set-key (kbd "C-x C-d") 'direx:find-directory)
 
 ;; Org-mode
-(add-hook 'org-mode-hook (lambda () (setq truncate-lines t)))
 (add-hook 'org-mode-hook (lambda () (setq word-wrap t)))
 (setq org-startup-indented 1)
+(setq org-startup-truncated nil)
 (setq org-src-fontify-natively t)
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-cb" 'org-iswitchb)
