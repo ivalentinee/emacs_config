@@ -34,6 +34,8 @@
  '(js2-basic-offset 2)
  '(jsx-indent-level 2)
  '(left-margin 0)
+ '(magit-auto-revert-mode t)
+ '(magit-visit-ref-behavior (quote (checkout-any)))
  '(org-export-html-toplevel-hlevel 1 t)
  '(package-selected-packages
    (quote
@@ -141,3 +143,4 @@
 ;; (require 'require-local)
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
+(put 'narrow-to-region 'disabled nil)
