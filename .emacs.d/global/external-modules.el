@@ -1,5 +1,7 @@
-;; external-modules.el
+;;; external-modules.el --- packages settings
+;;; Commentary:
 
+;;; Code
 (require 'haml-mode)
 (require 'coffee-mode)
 
@@ -168,3 +170,15 @@
 (setq alchemist-iex-program-name "/usr/local/bin/docker-compose run --rm web iex")
 (setq alchemist-execute-command "/usr/local/bin/docker-compose run --rm web elixir")
 (setq alchemist-compile-command "/usr/local/bin/docker-compose run --rm web elixirc")
+
+;; magit
+(require 'magit-process nil t)
+(add-hook
+ 'magit-mode-hook
+ (lambda ()
+   (magit-add-section-hook 'magit-status-sections-hook
+                        'magit-insert-unpushed-to-upstream
+                        'magit-insert-unpushed-to-upstream-or-recent
+                        'replace)))
+
+;;; external-modules.el ends here
