@@ -18,10 +18,10 @@
           (if (and base-path (file-exists-p eslint-executable-path))
               (progn
                 (setq flycheck-javascript-eslint-executable eslint-executable-path)
-                (setq flycheck-eslint-rules-directories base-path))
+                (setq flycheck-eslint-rules-directories (list base-path)))
             (progn
               (setq flycheck-javascript-eslint-executable nil)
-              (setq flycheck-eslint-rules-directories nil)))))))
+              (setq flycheck-eslint-rules-directories '())))))))
 
 (add-hook 'js2-mode-hook 'setup-local-flycheck-eslint)
 
