@@ -24,8 +24,8 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 
-(add-to-list 'auto-mode-alist '("Dockerfile" . conf-mode))
-(add-to-list 'auto-mode-alist '("\\..*ignore" . conf-mode))
+(add-to-list 'auto-mode-alist '("Dockerfile" . conf-space-mode))
+(add-to-list 'auto-mode-alist '("\\..*ignore" . conf-space-mode))
 
 (add-to-list 'auto-mode-alist '("\\.restclient$" . restclient-mode))
 
