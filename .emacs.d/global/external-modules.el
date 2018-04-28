@@ -147,6 +147,7 @@
 
 ;; web-mode
 (require 'web-mode)
+(flycheck-add-mode 'typescript-tslint 'web-mode)
 (add-hook 'web-mode-hook
           (lambda ()
             ;; short circuit js mode and just do everything in jsx-mode
