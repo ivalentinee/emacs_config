@@ -18,7 +18,7 @@
           (if (and base-path (file-exists-p tslint-executable-path))
               (progn
                 (setq flycheck-javascript-tslint-executable tslint-executable-path)
-                (setq flycheck-tslint-rules-directories (list base-path)))
+                (setq flycheck-tslint-rules-directories (list base-path (concat base-path "/frontend"))))
             (progn
               (setq flycheck-javascript-tslint-executable nil)
               (setq flycheck-tslint-rules-directories '())))))))
