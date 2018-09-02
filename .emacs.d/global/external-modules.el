@@ -5,20 +5,11 @@
 (require 'haml-mode)
 (require 'coffee-mode)
 
-;; ruby-block
-(require 'ruby-block)
-(ruby-block-mode t)
-
 ;; rubocop-mode for ruby
 (add-hook 'ruby-mode-hook #'rubocop-mode)
 
 ;; expand-region
 (global-set-key (kbd "C-=") 'er/expand-region)
-
-;; dired-details
-(require 'dired-details)
-(dired-details-install)
-(setq dired-details-hidden-string "[...] ")
 
 ;; Smart Mode Line
 (sml/setup)
@@ -112,16 +103,14 @@
 (projectile-global-mode)
 (require 'helm-projectile)
 (helm-projectile-on)
-;; projectile-rails
-(add-hook 'projectile-mode-hook 'projectile-rails-on)
-(add-hook 'ruby-mode-hook 'projectile-rails-on)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
 ;; ibuffer-vc
 (add-hook 'ibuffer-hook
-  (lambda ()
-    (ibuffer-vc-set-filter-groups-by-vc-root)
-      (unless (eq ibuffer-sorting-mode 'alphabetic)
-        (ibuffer-do-sort-by-alphabetic))))
+          (lambda ()
+            (ibuffer-vc-set-filter-groups-by-vc-root)
+            (unless (eq ibuffer-sorting-mode 'alphabetic)
+              (ibuffer-do-sort-by-alphabetic))))
 
 ;; Direx-project
 (require 'direx-project)

@@ -21,7 +21,7 @@
  '(current-language-environment "Russian")
  '(custom-safe-themes
    (quote
-    ("15348febfa2266c4def59a08ef2846f6032c0797f001d7b9148f30ace0d08bcf" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "3b24f986084001ae46aa29ca791d2bc7f005c5c939646d2b800143526ab4d323" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "756597b162f1be60a12dbd52bab71d40d6a2845a3e3c2584c6573ee9c332a66e" "6a37be365d1d95fad2f4d185e51928c789ef7a4ccf17e7ca13ad63a8bf5b922f" "516029471adacb3a933acb16589efa2efa9886ad86a4dc0a503da94695c19a4e" default)))
+    ("392395ee6e6844aec5a76ca4f5c820b97119ddc5290f4e0f58b38c9748181e8d" "15348febfa2266c4def59a08ef2846f6032c0797f001d7b9148f30ace0d08bcf" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "3b24f986084001ae46aa29ca791d2bc7f005c5c939646d2b800143526ab4d323" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "756597b162f1be60a12dbd52bab71d40d6a2845a3e3c2584c6573ee9c332a66e" "6a37be365d1d95fad2f4d185e51928c789ef7a4ccf17e7ca13ad63a8bf5b922f" "516029471adacb3a933acb16589efa2efa9886ad86a4dc0a503da94695c19a4e" default)))
  '(fci-rule-color "#f1c40f")
  '(font-latex-fontify-script t)
  '(global-auto-revert-mode t)
@@ -40,7 +40,7 @@
  '(org-export-html-toplevel-hlevel 1 t)
  '(package-selected-packages
    (quote
-    (magit helm helm-ag helm-projectile erlang typescript-mode flycheck alchemist company avy elixir-mode elixir-yasnippets 2048-game ace-window ag aggressive-indent anzu autopair coffee-mode dired-details direx expand-region fill-column-indicator fireplace flatui-theme gitconfig-mode goto-last-change haml-mode highlight-parentheses ibuffer-vc js2-mode js2-refactor json-mode json-reformat json-snatcher less-css-mode lua-mode macro-math markdown-mode markdown-mode+ mo-git-blame multi-term multiple-cursors nginx-mode paredit php-mode projectile projectile-rails rails-log-mode rake restclient rspec-mode ruby-block ruby-compilation ruby-end sass-mode scss-mode slim-mode slime smart-mode-line string-inflection urlenc web-mode yaml-mode yasnippet)))
+    (magit helm helm-ag helm-projectile erlang typescript-mode flycheck alchemist company avy elixir-mode elixir-yasnippets 2048-game ace-window ag aggressive-indent anzu autopair coffee-mode direx expand-region fill-column-indicator fireplace flatui-theme gitconfig-mode goto-last-change haml-mode highlight-parentheses ibuffer-vc js2-mode js2-refactor json-mode json-reformat json-snatcher less-css-mode lua-mode macro-math markdown-mode markdown-mode+ mo-git-blame multi-term multiple-cursors nginx-mode paredit php-mode projectile projectile-rails rails-log-mode rake restclient rspec-mode ruby-compilation ruby-end sass-mode scss-mode slim-mode slime smart-mode-line string-inflection urlenc web-mode yaml-mode yasnippet)))
  '(preview-default-option-list
    (quote
     ("displaymath" "floats" "graphics" "textmath" "sections" "footnotes")))
