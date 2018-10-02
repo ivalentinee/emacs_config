@@ -171,8 +171,12 @@
  'magit-mode-hook
  (lambda ()
    (magit-add-section-hook 'magit-status-sections-hook
-                        'magit-insert-unpushed-to-upstream
-                        'magit-insert-unpushed-to-upstream-or-recent
-                        'replace)))
+                           'magit-insert-unpushed-to-upstream
+                           'magit-insert-unpushed-to-upstream-or-recent
+                           'replace)))
+
+;; disable-mouse
+(require 'disable-mouse)
+(global-disable-mouse-mode)
 
 ;;; external-modules.el ends here
