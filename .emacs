@@ -37,6 +37,7 @@
  '(magit-auto-revert-mode t)
  '(magit-completing-read-function (quote helm--completing-read-default))
  '(magit-visit-ref-behavior (quote (checkout-any)))
+ '(org-agenda-files (quote ("~/todo.org")))
  '(org-export-html-toplevel-hlevel 1 t)
  '(package-selected-packages
    (quote

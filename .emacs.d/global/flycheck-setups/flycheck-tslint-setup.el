@@ -17,13 +17,14 @@
         (let* ((base-path (projectile-project-p)) (tslint-executable-path (tslint-node-modules-path base-path)))
           (if (and base-path (file-exists-p tslint-executable-path))
               (progn
-                (setq flycheck-javascript-tslint-executable tslint-executable-path)
+                (setq flycheck-typescript-tslint-executable tslint-executable-path)
                 (setq flycheck-tslint-rules-directories (list base-path (concat base-path "/frontend"))))
             (progn
-              (setq flycheck-javascript-tslint-executable nil)
+              (setq flycheck-typescript-tslint-executable nil)
               (setq flycheck-tslint-rules-directories '())))))))
 
-(add-hook 'js2-mode-hook 'setup-local-flycheck-tslint)
+(add-hook 'typescript-mode-hook 'setup-local-flycheck-tslint)
+
 
 (provide 'flycheck-tslint-setup)
 ;;; flycheck-tslint-setup.el ends here
