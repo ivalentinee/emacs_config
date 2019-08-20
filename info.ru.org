@@ -16,7 +16,7 @@
 - C-f C-b M-f M-b C-p C-n --- для перемещения в пределах небольшого абзаца
 - Для перемещения в начало строки использую похаченную версию C-a, которая переходит на начало строки или на начало идентации. Ссылка на файл в [[https://github.com/ivalentinee/emacs_config/blob/master/.emacs.d/global/smart-line-beginning.el][репозитории]].
 - C-s C-r --- для перехода "поиском". C-M-s и C-M-r --- для перехода "поиском" с регулярками
-- M-p M-n --- для переходов по абзацам (блокам). *ВНИМАНИЕ* этих комбинаций нет ванильном Emacs, делал сам. [[https://github.com/vemperor/emacs_config/blob/master/.emacs.d/global/my-key-bindings.el#L20][Ссылка на соответствующий раздел конфига]].
+- M-p M-n --- для переходов по абзацам (блокам). *ВНИМАНИЕ* этих комбинаций нет ванильном Emacs, делал сам. [[https://github.com/vemperor/emacs_config/blob/master/.emacs.d/settings/my-key-bindings.el#L20][Ссылка на соответствующий раздел конфига]].
 - [[https://github.com/winterTTr/ace-jump-mode][Ace-jump-mode]] --- удобный режим для перепрыгивания в пределах видимости (подробности по ссылке).
 * Полезные режимы, пакеты и вообще полезности
 Тут, пожалуй, можно обратиться к [[https://github.com/vemperor/emacs_config/blob/master/.emacs.d/Cask][списку пакетов]], но он большой и почти целиком есть в [[https://github.com/emacs-tw/awesome-emacs][awesome emacs]], так что не буду повторяться, поэтому опишу наиболее важные для меня кастомизации, пакеты и прочее
@@ -66,7 +66,7 @@ https://github.com/bbatsov/projectile
 - [[https://github.com/voins/mo-git-blame][mo-git-blame]]\\
   Привычный вид git-blame'а. Magit имеет свой git-blame, но мне он показался неудобным.
 
-Вроде бы Magit предоставляет какие-то комбинации клавиатурные, но я [[https://github.com/ivalentinee/emacs_config/blob/master/.emacs.d/global/git-bindings.el][решил запилить свои, наполненные одному мне известной семантикой]].
+Вроде бы Magit предоставляет какие-то комбинации клавиатурные, но я [[https://github.com/ivalentinee/emacs_config/blob/master/.emacs.d/settings/git-bindings.el][решил запилить свои, наполненные одному мне известной семантикой]].
 
 ** Org-mode
 [[http://orgmode.org/][Org-mode]] --- это целый мир.

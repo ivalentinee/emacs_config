@@ -5,8 +5,7 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
-(add-to-list 'load-path "~/.emacs.d/global")
-(add-to-list 'load-path "~/.emacs.d/local")
+(add-to-list 'load-path "~/.emacs.d/settings")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -144,7 +143,6 @@
 
 (require 'flycheck-setups)
 
-;; (require 'require-local)
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
 (put 'narrow-to-region 'disabled nil)

@@ -1,6 +1,6 @@
 ;; set-backup-dir.el
 
-;; This module sets backup directory for emacs. Found this code somewhere in The Internet.
+;; This module sets backup directory for emacs. Found this code somewhere on The Internet.
 
 (setq
    backup-by-copying t      ; don't clobber symlinks

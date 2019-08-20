@@ -3,7 +3,7 @@
 ;; Just my indentation settings. Nothing special.
 
 (add-hook 'c-mode-hook (lambda () (local-set-key "\r" 'newline-and-indent)))
-(setq c-default-style "linux" c-basic-offset 4)
+(setq c-default-style "linux" c-basic-offset 2)
 (add-hook 'ruby-mode-hook (lambda () (local-set-key "\r" 'newline-and-indent)))
 (add-hook 'tuareg-mode-hook (lambda () (local-set-key "\r" 'newline-and-indent)))
 (add-hook 'haskell-mode-hook (lambda () (local-set-key "\r" 'newline-and-indent)))

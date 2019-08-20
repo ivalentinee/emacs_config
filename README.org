@@ -16,7 +16,7 @@ package-install-selected-packages
 #+END_SRC
 
 ** Colors
-As written in [[https://github.com/ivalentinee/emacs_config/blob/master/.emacs.d/global/setup-theme.el][this file]] there are 3 UI schemes using 5 color themes.
+As written in [[https://github.com/ivalentinee/emacs_config/blob/master/.emacs.d/settings/setup-theme.el][this file]] there are 3 UI schemes using 5 color themes.
 
 Schemes are =light=, =dark=, and =terminal=. There are three corresponding interactive functions to switch between schemes:
 #+BEGIN_EXAMPLE

@@ -27,9 +27,6 @@
 (add-hook 'ruby-mode-hook (lambda () (setq ruby-insert-encoding-magic-comment nil)))
 
 ;; highlight current line
-(defface hl-line '((t (:background "#000000")))
-  "Face to use for `hl-line-face'." :group 'hl-line)
-(setq hl-line-face 'hl-line)
 (global-hl-line-mode t)
 
 ;; which-function-mode
