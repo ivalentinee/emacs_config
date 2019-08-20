@@ -142,7 +142,6 @@
 (require 'helm-custom-themes)
 (require 'switch-font-size)
 
-(require 'customized-org-html)
 (require 'flycheck-setups)
 
 ;; (require 'require-local)
