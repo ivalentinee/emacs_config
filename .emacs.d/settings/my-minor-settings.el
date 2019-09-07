@@ -34,4 +34,6 @@
           '(lambda ()
              (which-function-mode)))
 
+(setq comint-prompt-read-only t)
+
 (provide 'my-minor-settings)
