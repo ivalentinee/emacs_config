@@ -1,3 +1,7 @@
+;;; insert-name.el --- packages settings
+;;; Commentary:
+
+;;; Code:
 (defun insert-file-name ()
   "Insert current buffer filename."
   (interactive)

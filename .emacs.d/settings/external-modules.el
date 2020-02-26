@@ -104,6 +104,7 @@
 (require 'helm-projectile)
 (helm-projectile-on)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "C-c p w") 'copy-project-file-name)
 
 ;; ibuffer-vc
 (add-hook 'ibuffer-hook
