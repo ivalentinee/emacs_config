@@ -3,7 +3,6 @@
 
 ;;; Code:
 (add-to-list 'load-path "~/.emacs.d/settings/flycheck-setups")
-(add-hook 'after-init-hook #'global-flycheck-mode)
 (require 'flycheck-eslint-setup)
 (require 'flycheck-tslint-setup)
 

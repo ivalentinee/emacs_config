@@ -148,6 +148,7 @@
 ;; flycheck
 (require 'flycheck)
 (flycheck-add-mode 'typescript-tslint 'web-mode)
+(setq flycheck-global-mode nil)
 
 ;; js-mode
 (setq js-indent-level 2)
