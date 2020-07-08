@@ -50,6 +50,6 @@
   (helm-apply-terminal-theme))
 
 (set-custom-font custom-default-font)
-(go-to-light)
+(go-to-dark)
 
 (provide 'setup-theme)
