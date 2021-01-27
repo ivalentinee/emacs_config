@@ -14,7 +14,7 @@
 (defun switch-font-size ()
   "switch between normal and large font sizes"
   (interactive)
-  (if (equalp *current-font-size-mode* "normal")
+  (if (cl-equalp *current-font-size-mode* "normal")
       (set-enlarged-font)
     (set-normal-font)))
 
