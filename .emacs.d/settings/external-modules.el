@@ -6,7 +6,7 @@
 (require 'coffee-mode)
 
 ;; rubocop-mode for ruby
-(add-hook 'ruby-mode-hook #'rubocop-mode)
+;; (add-hook 'ruby-mode-hook #'rubocop-mode)
 
 ;; expand-region
 (global-set-key (kbd "C-=") 'er/expand-region)
