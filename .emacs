@@ -28,6 +28,8 @@
  '(global-auto-revert-non-file-buffers t)
  '(global-highline-mode nil)
  '(global-linum-mode nil)
+ '(highlight-parentheses-background-colors (quote ("#2492db" "#95a5a6" nil)))
+ '(highlight-parentheses-colors (quote ("#ecf0f1" "#ecf0f1" "#c0392b")))
  '(hl-paren-background-colors (quote ("#2492db" "#95a5a6" nil)))
  '(hl-paren-colors (quote ("#ecf0f1" "#ecf0f1" "#c0392b")))
  '(indent-tabs-mode nil)
@@ -41,7 +43,7 @@
  '(org-export-html-toplevel-hlevel 1 t)
  '(package-selected-packages
    (quote
-    (rubocop haskell-mode haskell-snippets yasnippet-snippets cmake-mode disable-mouse magit helm helm-ag helm-projectile erlang typescript-mode flycheck alchemist company avy elixir-mode elixir-yasnippets ace-window ag aggressive-indent anzu autopair coffee-mode direx expand-region fill-column-indicator fireplace flatui-theme gitconfig-mode goto-last-change haml-mode highlight-parentheses ibuffer-vc js2-refactor json-mode json-reformat json-snatcher less-css-mode lua-mode macro-math markdown-mode markdown-mode+ mo-git-blame multi-term multiple-cursors nginx-mode paredit php-mode projectile projectile-rails rails-log-mode rake restclient rspec-mode ruby-compilation ruby-end sass-mode scss-mode slim-mode slime smart-mode-line string-inflection urlenc web-mode yaml-mode yasnippet)))
+    (pinentry rubocop haskell-mode haskell-snippets yasnippet-snippets cmake-mode disable-mouse magit helm helm-ag helm-projectile erlang typescript-mode flycheck alchemist company avy elixir-mode elixir-yasnippets ace-window ag aggressive-indent anzu autopair coffee-mode direx expand-region fill-column-indicator fireplace flatui-theme gitconfig-mode goto-last-change haml-mode highlight-parentheses ibuffer-vc js2-refactor json-mode json-reformat json-snatcher less-css-mode lua-mode macro-math markdown-mode markdown-mode+ mo-git-blame multi-term multiple-cursors nginx-mode paredit php-mode projectile projectile-rails rails-log-mode rake restclient rspec-mode ruby-compilation ruby-end sass-mode scss-mode slim-mode slime smart-mode-line string-inflection urlenc web-mode yaml-mode yasnippet)))
  '(preview-default-option-list
    (quote
     ("displaymath" "floats" "graphics" "textmath" "sections" "footnotes")))

@@ -52,10 +52,18 @@
 (setq slime-contribs '(slime-fancy))
 
 ;; Autopair
-(add-to-list 'load-path "~/.emacs.d/autopair")
-(require 'autopair)
-(autopair-global-mode)
-(setq autopair-autowrap t)
+(electric-pair-mode 1)
+
+;; Disable autopair for paredit
+(require 'paredit)
+(defadvice paredit-mode (around disable-autopairs-around (arg))
+  "Disable autopairs mode if paredit-mode is turned on"
+  ad-do-it
+  (if (null ad-return-value)
+      (electric-pair-mode 1)
+    (electric-pair-mode 0)
+    ))
+(ad-activate 'paredit-mode)
 
 ;; Paredit
 (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
@@ -67,17 +75,6 @@
 (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
 (global-set-key (kbd "C-x p f") 'paredit-forward-slurp-sexp)
 (global-set-key (kbd "C-x p b") 'paredit-backward-slurp-sexp)
-
-;; Disable autopair for paredit
-(require 'paredit)
-(defadvice paredit-mode (around disable-autopairs-around (arg))
-  "Disable autopairs mode if paredit-mode is turned on"
-  ad-do-it
-  (if (null ad-return-value)
-      (autopair-mode 1)
-    (autopair-mode 0)
-    ))
-(ad-activate 'paredit-mode)
 
 ;; string-inflection (Camelcase)
 (require 'string-inflection)
@@ -176,6 +173,12 @@
                            'magit-insert-unpushed-to-upstream
                            'magit-insert-unpushed-to-upstream-or-recent
                            'replace)))
+
+;; pinentry
+;; mostly for windows WSL integration
+(setenv "INSIDE_EMACS" (format "%s,comint" emacs-version))
+(setq epa-pinentry-mode 'loopback)
+(pinentry-start)
 
 ;; disable-mouse
 (require 'disable-mouse)
