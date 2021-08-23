@@ -34,6 +34,9 @@
           '(lambda ()
              (which-function-mode)))
 
+;; disable annoying sound
+(setq ring-bell-function 'ignore)
+
 (setq comint-prompt-read-only t)
 
 (provide 'my-minor-settings)

@@ -54,17 +54,6 @@
 ;; Autopair
 (electric-pair-mode 1)
 
-;; Disable autopair for paredit
-(require 'paredit)
-(defadvice paredit-mode (around disable-autopairs-around (arg))
-  "Disable autopairs mode if paredit-mode is turned on"
-  ad-do-it
-  (if (null ad-return-value)
-      (electric-pair-mode 1)
-    (electric-pair-mode 0)
-    ))
-(ad-activate 'paredit-mode)
-
 ;; Paredit
 (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
 (add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
