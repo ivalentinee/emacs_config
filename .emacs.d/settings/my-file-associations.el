@@ -27,6 +27,8 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html.eex\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html.leex\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html.heex\\'" . web-mode))
 
 (add-to-list 'auto-mode-alist '("Dockerfile" . conf-space-mode))
 (add-to-list 'auto-mode-alist '("\\..*ignore" . conf-space-mode))
