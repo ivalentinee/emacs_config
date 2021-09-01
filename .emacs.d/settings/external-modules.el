@@ -90,7 +90,12 @@
 (require 'helm-projectile)
 (helm-projectile-on)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-(define-key projectile-mode-map (kbd "C-c p w") 'copy-project-file-name)
+(define-key projectile-mode-map (kbd "C-c p w") 'projectile-copy-file-name)
+(define-key projectile-mode-map (kbd "C-c p x f") 'projectile-format-file)
+(add-hook 'elixir-mode-hook
+          (lambda ()
+            (setq *projectile-format-fun*
+                  (lambda (file-name) (list "mix" "format" file-name)))))
 
 ;; ibuffer-vc
 (add-hook 'ibuffer-hook
