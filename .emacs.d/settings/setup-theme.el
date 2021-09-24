@@ -9,7 +9,7 @@
 
 (defun set-custom-font (custom-font)
   (add-to-list 'default-frame-alist (cons 'font custom-font))
-  (set-default-font custom-font))
+  (set-frame-font custom-font))
 
 (defun go-to-dark ()
   "setup light-on-dark colors"

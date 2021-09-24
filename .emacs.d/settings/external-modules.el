@@ -170,9 +170,11 @@
 
 ;; pinentry
 ;; mostly for windows WSL integration
-(setenv "INSIDE_EMACS" (format "%s,comint" emacs-version))
-(setq epa-pinentry-mode 'loopback)
-(pinentry-start)
+(if (string= system-type "gnu/linux")
+    (progn (setenv "INSIDE_EMACS" (format "%s,comint" emacs-version))
+           (setq epa-pinentry-mode 'loopback)
+           (pinentry-start)))
+
 
 ;; disable-mouse
 (require 'disable-mouse)

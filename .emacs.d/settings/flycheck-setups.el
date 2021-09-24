@@ -2,11 +2,11 @@
 ;;; Commentary:
 
 ;;; Code:
-(defun flycheck-display-error-notice (errors)
-  (when (and errors (flycheck-may-use-echo-area-p))
-    (message "flycheck encountered errors")))
+;; (defun flycheck-display-error-notice (errors)
+;;   (when (and errors (flycheck-may-use-echo-area-p))
+;;     (message "flycheck encountered errors")))
 
-(setq flycheck-display-errors-function 'flycheck-display-error-notice)
+;; (setq flycheck-display-errors-function 'flycheck-display-error-notice)
 
 (add-to-list 'load-path "~/.emacs.d/settings/flycheck-setups")
 
