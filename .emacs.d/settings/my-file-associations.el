@@ -19,6 +19,8 @@
 
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tsx$" . typescript-mode))
+(add-to-list 'auto-mode-alist '("\\.cts$" . typescript-mode))
+(add-to-list 'auto-mode-alist '("\\.mts$" . typescript-mode))
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.[gj]sp\\'" . web-mode))

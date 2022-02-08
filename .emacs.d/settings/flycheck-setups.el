@@ -11,7 +11,6 @@
 (add-to-list 'load-path "~/.emacs.d/settings/flycheck-setups")
 
 (require 'flycheck-eslint-setup)
-(require 'flycheck-tslint-setup)
 
 (add-hook 'elixir-mode-hook 'flycheck-mode)
 (setq flycheck-elixir-credo-strict t)

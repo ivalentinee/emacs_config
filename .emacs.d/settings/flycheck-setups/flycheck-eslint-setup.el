@@ -16,14 +16,15 @@
         (make-local-variable 'flycheck-eslint-rules-directories)
         (let* ((base-path (projectile-project-p)) (eslint-executable-path (eslint-node-modules-path base-path)))
           (if (and base-path (file-exists-p eslint-executable-path))
-              (progn
-                (setq flycheck-javascript-eslint-executable eslint-executable-path)
-                (setq flycheck-eslint-rules-directories (list base-path)))
-            (progn
-              (setq flycheck-javascript-eslint-executable nil)
-              (setq flycheck-eslint-rules-directories '())))))))
+              (setq flycheck-javascript-eslint-executable eslint-executable-path)
+            (setq flycheck-javascript-eslint-executable nil))))))
 
 (add-hook 'js2-mode-hook 'setup-local-flycheck-eslint)
+
+(add-hook 'typescript-mode-hook 'flycheck-mode)
+(add-hook 'typescript-mode-hook 'setup-local-flycheck-eslint)
+
+(flycheck-add-mode 'javascript-eslint 'typescript-mode)
 
 (provide 'flycheck-eslint-setup)
 ;;; flycheck-eslint-setup.el ends here
