@@ -18,5 +18,7 @@
                                       (define-key slime-mode-map "\M-p" 'backward-paragraph)
                                       (define-key slime-mode-map "\M-n" 'forward-paragraph)))))
 
+;; Reset C-x o to ace-window
+(global-set-key (kbd "C-x o") 'ace-window)
 
 (provide 'my-key-bindings)
