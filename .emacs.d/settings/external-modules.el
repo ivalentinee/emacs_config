@@ -147,10 +147,11 @@
 ;; js2-mode
 (setq js2-strict-trailing-comma-warning nil)
 
+;; prettier-js
+(add-hook 'typescript-mode-hook 'prettier-js-mode)
+
 (require 'git-bindings)
 (require 'yas-settings)
-
-(provide 'external-modules)
 
 ;; alchemist
 (setq alchemist-mix-command "/usr/local/bin/docker-compose run --rm web mix")
@@ -180,4 +181,5 @@
 (require 'disable-mouse)
 (global-disable-mouse-mode)
 
+(provide 'external-modules)
 ;;; external-modules.el ends here
