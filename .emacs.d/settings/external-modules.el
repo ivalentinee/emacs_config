@@ -46,11 +46,6 @@
     (highlight-parentheses-mode t)))
 (global-highlight-parentheses-mode t)
 
-;; slime
-(require 'slime-autoloads)
-(setq inferior-lisp-program "/usr/bin/sbcl")
-(setq slime-contribs '(slime-fancy))
-
 ;; Autopair
 (electric-pair-mode 1)
 
@@ -74,6 +69,7 @@
 
 ;; Helm
 (helm-mode 1)
+(setq helm-move-to-line-cycle-in-source nil)
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-x b") 'helm-buffers-list)

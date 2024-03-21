@@ -12,7 +12,7 @@
 
 (require 'flycheck-eslint-setup)
 
-(add-hook 'elixir-mode-hook 'flycheck-mode)
+;; (add-hook 'elixir-mode-hook 'flycheck-mode)
 (setq flycheck-elixir-credo-strict t)
 
 (provide 'flycheck-setups)
