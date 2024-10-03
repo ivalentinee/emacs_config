@@ -1,13 +1,6 @@
 ;;; external-modules.el --- packages settings
 ;;; Commentary:
 
-;;; Code
-(require 'haml-mode)
-(require 'coffee-mode)
-
-;; rubocop-mode for ruby
-;; (add-hook 'ruby-mode-hook #'rubocop-mode)
-
 ;; expand-region
 (global-set-key (kbd "C-=") 'er/expand-region)
 
@@ -100,11 +93,6 @@
             (unless (eq ibuffer-sorting-mode 'alphabetic)
               (ibuffer-do-sort-by-alphabetic))))
 
-;; Direx-project
-(require 'direx-project)
-(global-set-key (kbd "C-x C-j") 'direx-project:jump-to-project-root)
-(global-set-key (kbd "C-x C-d") 'direx:find-directory)
-
 ;; Org-mode
 (add-hook 'org-mode-hook (lambda () (setq word-wrap t)))
 (setq org-startup-indented 1)
@@ -167,10 +155,10 @@
 
 ;; pinentry
 ;; mostly for windows WSL integration
-(if (string= system-type "gnu/linux")
-    (progn (setenv "INSIDE_EMACS" (format "%s,comint" emacs-version))
-           (setq epa-pinentry-mode 'loopback)
-           (pinentry-start)))
+;; (if (string= system-type "gnu/linux")
+;;     (progn (setenv "INSIDE_EMACS" (format "%s,comint" emacs-version))
+;;            (setq epa-pinentry-mode 'loopback)
+;;            (pinentry-start)))
 
 
 ;; disable-mouse
