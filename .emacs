@@ -34,7 +34,7 @@
  '(org-agenda-files '("~/todo.org"))
  '(org-export-html-toplevel-hlevel 1 t)
  '(package-selected-packages
-   '(direx markdown-mode prettier-js rust-mode uuidgen password-generator cmake-mode disable-mouse helm-ag helm-projectile erlang typescript-mode flycheck company avy elixir-mode elixir-yasnippets ace-window ag aggressive-indent anzu autopair expand-region fireplace flatui-theme gitconfig-mode highlight-parentheses ibuffer-vc json-mode json-reformat lua-mode macro-math markdown-mode+ mo-git-blame multi-term multiple-cursors paredit projectile smart-mode-line string-inflection urlenc web-mode magit pinentry))
+   '(direx markdown-mode prettier-js rust-mode uuidgen password-generator cmake-mode disable-mouse helm-ag helm-projectile erlang typescript-mode flycheck company avy elixir-mode elixir-yasnippets ace-window ag aggressive-indent anzu autopair expand-region fireplace flatui-theme gitconfig-mode highlight-parentheses ibuffer-vc json-mode json-reformat lua-mode macro-math markdown-mode+ multi-term multiple-cursors paredit projectile smart-mode-line string-inflection urlenc web-mode magit pinentry))
  '(preview-default-option-list
    '("displaymath" "floats" "graphics" "textmath" "sections" "footnotes"))
  '(preview-fast-conversion t)
