@@ -8,12 +8,12 @@
 
 ;; (setq flycheck-display-errors-function 'flycheck-display-error-notice)
 
-(add-to-list 'load-path "~/.emacs.d/settings/flycheck-setups")
+;; (add-to-list 'load-path "~/.emacs.d/settings/flycheck-setups")
 
-(require 'flycheck-eslint-setup)
+;; (require 'flycheck-eslint-setup)
 
 ;; (add-hook 'elixir-mode-hook 'flycheck-mode)
-(setq flycheck-elixir-credo-strict t)
+;; (setq flycheck-elixir-credo-strict t)
 
 (provide 'flycheck-setups)
 ;;; flycheck-setups.el ends here

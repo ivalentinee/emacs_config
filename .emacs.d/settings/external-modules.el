@@ -128,9 +128,6 @@
 ;; js-mode
 (setq js-indent-level 2)
 
-;; js2-mode
-(setq js2-strict-trailing-comma-warning nil)
-
 ;; prettier-js
 (add-hook 'typescript-mode-hook 'prettier-js-mode)
 
