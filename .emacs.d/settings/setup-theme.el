@@ -14,6 +14,7 @@
 (defun go-to-dark ()
   "setup light-on-dark colors"
   (interactive)
+  (helm-apply-dark-theme)
   (disable-theme light-theme)
   (disable-theme light-client-theme)
   (set-face-foreground 'highlight nil)
@@ -21,12 +22,12 @@
   (if (daemonp)
       (load-theme dark-client-theme)
     (if window-system (load-theme dark-theme)))
-  (sml/apply-theme "dark")
-  (helm-apply-dark-theme))
+  (sml/apply-theme "dark"))
 
 (defun go-to-light ()
   "setup dark-on-light colors"
   (interactive)
+  (helm-apply-light-theme)
   (disable-theme dark-theme)
   (disable-theme dark-client-theme)
   (set-face-foreground 'highlight nil)
@@ -34,8 +35,7 @@
   (if (daemonp)
       (load-theme light-client-theme)
     (if window-system (load-theme light-theme)))
-  (sml/apply-theme "light")
-  (helm-apply-light-theme))
+  (sml/apply-theme "light"))
 
 (defun go-to-terminal-magit ()
   "setup colors for white-on-black terminal for magit"
