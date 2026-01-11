@@ -1,4 +1,5 @@
 (add-to-list 'load-path "~/.emacs.d/settings")
+(add-to-list 'load-path "~/.emacs.d/settings/adventurer")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -151,6 +152,8 @@
 
 (require 'flycheck-setups)
 (require 'use-lsp)
+
+(require 'adventurer)
 
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
