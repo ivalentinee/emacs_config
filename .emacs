@@ -1,5 +1,6 @@
 (add-to-list 'load-path "~/.emacs.d/settings")
 (add-to-list 'load-path "~/.emacs.d/settings/adventurer")
+(add-to-list 'load-path "~/.emacs.d/settings/time-tracker")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
