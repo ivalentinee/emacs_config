@@ -32,11 +32,11 @@
          (to (time-tracker/time-to-seconds (cdr time-range))))
     (time-tracker/time-diff from to)))
 
-(defun time-tracker/datetime-iso8601-utc (datetime &optional zone)
+(defun time-tracker/datetime-iso8601 (datetime &optional zone)
   (let* ((datetime-string (concat (car datetime) " " (cdr datetime)))
          (parsed (parse-time-string datetime-string))
          (zone (or zone 0)))
-    (format-time-string "%Y-%m-%dT%H:%M:%S" (encode-time parsed) zone)))
+    (format-time-string "%Y-%m-%dT%H:%M:%S.000%z" (encode-time parsed) zone)))
 
 (defun time-tracker/parse-zone (zone-string)
   (if (and (stringp zone-string) (> (length zone-string) 1))

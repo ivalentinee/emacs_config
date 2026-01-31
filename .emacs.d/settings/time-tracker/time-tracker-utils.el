@@ -22,6 +22,7 @@
   (if (not (time-tracker/line-is-empty)) (insert "\n"))
   (insert "*** ")
   (org-set-property "TIME" (format "%s-%s" (format-time-string "%H:%m") (format-time-string "%H:%m")))
+  (org-set-property "ZONE" (format-time-string "%:z" (current-time) nil))
   (org-set-property "ID" "NONE")
   (org-set-property "TRACK-ID" "NONE")
   (org-set-property "TYPE" "TASK"))
