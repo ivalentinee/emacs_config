@@ -31,6 +31,10 @@
         (filename-to (adventurer/compose-filename "png")))
     (shell-command (format "%s '%s' %s %s '%s'" "/usr/bin/dot" filename-from "-Tpng" ">" filename-to))))
 
+(defun adventurer/build-graph/clear ()
+  (delete-file (adventurer/compose-filename "dot"))
+  (delete-file (adventurer/compose-filename "png")))
+
 (defun adventurer/build-graph (scene-entries)
   (adventurer/write-scene-links scene-entries)
   (adventurer/visualize-graph))

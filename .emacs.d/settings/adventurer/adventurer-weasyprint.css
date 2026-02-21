@@ -1,0 +1,37 @@
+@page {
+  margin: 1.5cm;
+  size: A4;
+}
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+h1 {
+  text-align: center;
+  font-size: 3em;
+}
+h3, h4, h5 {
+  margin: 0px;
+  margin-bottom: 5px;
+}
+p {
+  margin-bottom: 15px;
+  margin-top: 0px;
+}
+.nobreak {
+  page-break-inside: avoid;
+  margin-bottom: 50px;
+}
+.graph-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1500px;
+  height: 700px;
+}
+.graph {
+  max-height: 1000px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
