@@ -24,4 +24,17 @@
   (adventurer/build-document/clear)
   (adventurer/remove-build-path))
 
+(defun adventurer/initialize ()
+  "Creates a new adventure buffer"
+  (interactive)
+  (let ((adventure-sample-path (concat (adventurer/get-script-path) "/" "adventurer-new.org"))
+        (buffer (get-buffer-create "new-adventure.org")))
+    (with-current-buffer buffer
+      (org-mode)
+      (erase-buffer)
+      (insert-file-contents adventure-sample-path)
+      (beginning-of-buffer))
+    (switch-to-buffer buffer)
+    (org-cycle-global)))
+
 (provide 'adventurer)

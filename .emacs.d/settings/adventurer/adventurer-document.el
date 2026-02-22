@@ -56,10 +56,14 @@
      (mapcar 'adventurer/build-document/insert-scene-xp scene-entries)
      (adventurer/build-document/insert-nobreak-end))))
 
+(defun adventurer/build-document/without-properties (body)
+  (replace-regexp-in-string ":PROPERTIES:\\(.\\|\n\\)+:END:" "" body))
+
 (defun adventurer/build-document/insert-scene (scene)
   (adventurer/build-document/insert-nobreak-start)
   (insert (format "\n** %s\n" (alist-get 'title scene)))
-  (insert (alist-get 'body scene))
+  (when (alist-get 'music scene) (insert (format "\n\n/Музыка: %s/\n" (alist-get 'music scene))))
+  (insert (adventurer/build-document/without-properties (alist-get 'body scene)))
   (adventurer/build-document/insert-nobreak-end))
 
 (defun adventurer/build-document/build-scenes (scene-entries)

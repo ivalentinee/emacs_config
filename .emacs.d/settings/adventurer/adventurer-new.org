@@ -1,0 +1,41 @@
+#+TITLE: Приключение
+#+URLS:
+#+WALLPAPER: assets/wallpaper.png
+#+OPTIONS: ^:{}
+#+STARTUP: overview
+
+* Короткое описание
+:PROPERTIES:
+:ID: description
+:END:
+/Короткое описание/
+
+* Подготовить
+:PROPERTIES:
+:ID: prepare
+:END:
+
+** NPC
+*** *Какой-то NPC*
+** Противники
+*** Какой-то противник
+** Состояния
+*** Какое-то состояние
+* Сцены
+:PROPERTIES:
+:ID: scenes
+:END:
+
+** [01] Сцена №1
+:PROPERTIES:
+:ID: 01
+:EXP: 10
+:LINK:
+:MUSIC:
+:MAP:
+:TOKENS:
+:PLACE-TOKENS:
+:END:
+
+Сцена №1
+#+xp: [10] Получить опыт за сцену
