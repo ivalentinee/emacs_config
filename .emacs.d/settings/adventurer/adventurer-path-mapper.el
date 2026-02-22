@@ -68,7 +68,8 @@
     scene-output))
 
 (defun adventurer/build-path-mapper/write-scenes (output scene-entries)
-  (let* ((rendered-scenes (mapcar 'adventurer/build-path-mapper/render-scene scene-entries))
+  (let* ((non-todo-scenes (seq-filter #'(lambda (scene) (not (alist-get 'todo scene))) scene-entries))
+         (rendered-scenes (mapcar 'adventurer/build-path-mapper/render-scene non-todo-scenes))
          (scenes-output (string-join rendered-scenes "\n\n")))
     (adventurer/build-path-mapper/append-output output scenes-output)))
 

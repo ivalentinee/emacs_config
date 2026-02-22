@@ -17,3 +17,15 @@
 
 (defun adventurer/get-script-path ()
   adventurer/script-path)
+
+(defun adventurer/replace-in-region (regexp replacement)
+  (when (region-active-p)
+    (save-excursion
+      (replace-regexp-in-region regexp replacement (region-beginning) (region-end)))))
+
+(defun adventurer/convert-place-tokens ()
+  (interactive)
+  (adventurer/replace-in-region "place_tokens = \\[\n" "")
+  (adventurer/replace-in-region "\n\\]$" "")
+  (adventurer/replace-in-region " +{ name = \"\\([^\"]+\\)\", x = \\([0-9]+\\), y = \\([0-9]+\\), state = \"\\([^\"]+\\)\" }" "[[\\1 | \\4 | point | \\2 | \\3][\\1]]")
+  (adventurer/replace-in-region ",\n" " "))

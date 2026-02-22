@@ -92,6 +92,7 @@
   (if (equal (org-outline-level) 2)
       `((id . ,(org-entry-get nil "ID"))
         (title . ,(org-get-heading t t t t))
+        (todo . ,(equal (nth 2 (org-heading-components)) "TODO"))
         (body . ,(org-get-entry))
         (links . ,(adventurer/parse-entry-links (org-entry-get nil "LINK")))
         (map . ,(or (org-entry-get nil "MAP") (format "%s.ora" (org-entry-get nil "ID"))))
