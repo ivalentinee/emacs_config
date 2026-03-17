@@ -81,6 +81,7 @@
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p w") 'projectile-copy-file-name)
 (define-key projectile-mode-map (kbd "C-c p x f") 'projectile-format-file)
+(define-key projectile-mode-map (kbd "C-c p s s") 'projectile-do-ag)
 (add-hook 'elixir-mode-hook
           (lambda ()
             (setq *projectile-format-fun*
@@ -120,16 +121,8 @@
                 (web-mode-set-content-type "jsx")
               (message "now set to: %s" web-mode-content-type))))
 
-;; flycheck
-(require 'flycheck)
-(flycheck-add-mode 'typescript-tslint 'web-mode)
-(setq flycheck-global-mode nil)
-
 ;; js-mode
 (setq js-indent-level 2)
-
-;; prettier-js
-(add-hook 'typescript-mode-hook 'prettier-js-mode)
 
 (require 'git-bindings)
 (require 'yas-settings)

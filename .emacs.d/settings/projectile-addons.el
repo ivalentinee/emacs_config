@@ -38,5 +38,12 @@
               (apply 'start-process
                      (append '("projectile-format" nil) (apply *projectile-format-fun* (list projectile-file-name)))))))))
 
+(defun projectile-do-ag ()
+  "Perform interactive ag search in the project"
+  (interactive)
+  (if (projectile-project-root)
+      (helm-do-ag (projectile-project-root) '() (thing-at-point 'symbol t))
+    (error "Not in a project")))
+
 (provide 'projectile-addons)
 ;;; package-settings.el ends here
