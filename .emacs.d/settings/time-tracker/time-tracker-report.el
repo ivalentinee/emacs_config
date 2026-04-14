@@ -1,6 +1,7 @@
 (load "time-tracker-common")
 (load "time-tracker-report-day")
 (load "time-tracker-report-week")
+(load "time-tracker-report-month")
 (load "time-tracker-jira-push")
 
 (defun time-tracker/build-jira-report ()
@@ -16,6 +17,11 @@
   (cond ((time-tracker/is-work-entry) (time-tracker/build-jira-day-report t))
         ((time-tracker/is-day-entry) (time-tracker/build-jira-day-report t))
         ((time-tracker/is-week-entry) (time-tracker/build-jira-week-report t))))
+
+(defun time-tracker/build-jira-month-report-with-remote-data ()
+  "Builds a monthly report with remote JIRA data"
+  (interactive)
+  (time-tracker/build-jira-month-report t))
 
 (defun time-tracker/push-and-report-with-data ()
   "Pushes data to JIRA and builds a report"

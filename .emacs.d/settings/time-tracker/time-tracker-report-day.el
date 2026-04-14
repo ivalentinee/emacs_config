@@ -13,7 +13,7 @@
   (if (not (equal (alist-get 'track-id report-entry) "NONE"))
       (insert (alist-get 'track-id report-entry)))
   (org-table-goto-column 3)
-  (insert (alist-get 'total-jira report-entry))
+  (insert (alist-get 'total report-entry))
   (org-table-goto-column 4)
   (insert (alist-get 'title report-entry))
   (when get-remote-data
@@ -68,7 +68,7 @@
   (org-table-goto-column 1)
   (insert "Total")
   (org-table-goto-column 3)
-  (insert (time-tracker/format-time-jira (time-tracker/calculate-report-day-time-total report-entries))))
+  (insert (time-tracker/format-time (time-tracker/calculate-report-day-time-total report-entries))))
 
 (defun time-tracker/put-jira-day-report-data (day-report-entries &optional get-remote-data)
   (insert "** " (car day-report-entries) "\n")

@@ -12,7 +12,7 @@
   (insert "* Days\n")
   (mapcar (lambda (entry) (time-tracker/put-jira-day-report-data entry get-remote-data)) week-report-entries)
   (let ((total (time-tracker/calculate-report-week-time-total week-report-entries)))
-    (insert "* Week total\n" (time-tracker/format-time-jira total))))
+    (insert "* Week total\n" (time-tracker/format-time total))))
 
 (defun time-tracker/build-jira-week-report (&optional get-remote-data)
   (let ((week-report-entries (time-tracker/collect-jira-week-report-entries get-remote-data))

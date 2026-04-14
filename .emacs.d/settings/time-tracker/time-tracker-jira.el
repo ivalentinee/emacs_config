@@ -52,11 +52,24 @@
          (worklogs (time-tracker/jira/get-worklogs issue-data)))
     (time-tracker/jira/find-worklog worklogs datetime zone)))
 
+(defun time-tracker/jira/parse-time-spent (time-spent)
+  "Parses JIRA time spent string (e.g. '1d 2h 30m') into seconds.
+1 JIRA day = 8 hours."
+  (let ((days 0) (hours 0) (minutes 0))
+    (when (string-match "\\([0-9]+\\)d" time-spent)
+      (setq days (string-to-number (match-string 1 time-spent))))
+    (when (string-match "\\([0-9]+\\)h" time-spent)
+      (setq hours (string-to-number (match-string 1 time-spent))))
+    (when (string-match "\\([0-9]+\\)m" time-spent)
+      (setq minutes (string-to-number (match-string 1 time-spent))))
+    (+ (* days 8 60 60) (* hours 60 60) (* minutes 60))))
+
 (defun time-tracker/jira/worklog-status (worklog expected-time)
-  (let ((normalized-expected-time (time-tracker/jira/worklog-normalize-jira-total expected-time)))
-    (if worklog
-        (if (equal (gethash "timeSpent" worklog) normalized-expected-time) "✓" "⏲")
-      "✕")))
+  (if worklog
+      (let ((worklog-seconds (time-tracker/jira/parse-time-spent (gethash "timeSpent" worklog)))
+            (expected-seconds (time-tracker/jira/parse-time-spent expected-time)))
+        (if (= worklog-seconds expected-seconds) "✓" "⏲"))
+    "✕"))
 
 (defun time-tracker/jira/get-credentials ()
   (save-excursion
@@ -75,5 +88,3 @@
          (datetime-string (concat date " " time)))
     (format "%d" (time-to-seconds (encode-time (parse-time-string datetime-string))))))
 
-(defun time-tracker/jira/worklog-normalize-jira-total (jira-total)
-  (string-trim (string-replace "8h" "1d" (replace-regexp-in-string "\\(0h \\)\\|\\( 0m\\)" "" expected-time))))
