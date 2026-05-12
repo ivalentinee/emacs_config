@@ -37,4 +37,22 @@
     (switch-to-buffer buffer)
     (org-cycle-global)))
 
+(defun adventurer/pack ()
+  "Packs adventure source files (.org + assets) into a zip archive"
+  (interactive)
+  (unless (eq major-mode 'org-mode)
+    (error "Not an org-mode buffer"))
+  (let* ((scene-data (adventurer/collect-scene-data))
+         (org-file (file-name-nondirectory (buffer-file-name)))
+         (asset-files (adventurer/build-path-mapper/collect-source-files scene-data))
+         (all-files (cons org-file asset-files))
+         (unique-files (seq-uniq (seq-filter #'file-exists-p all-files)))
+         (output-filename (adventurer/compose-filename "src.zip"))
+         (file-list (string-join (mapcar (lambda (f) (format "\"%s\"" f)) unique-files) " ")))
+    (adventurer/make-build-path)
+    (when (file-exists-p output-filename)
+      (delete-file output-filename))
+    (shell-command (format "/usr/bin/zip \"%s\" %s %s" output-filename file-list (adventurer/ignore-shell-output)))
+    (message "Packed %d files into %s" (length unique-files) output-filename)))
+
 (provide 'adventurer)

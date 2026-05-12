@@ -64,13 +64,16 @@
          (state (nth 1 token-properties))
          (type (nth 2 token-properties))
          (x (string-to-number (nth 3 token-properties)))
-         (y (string-to-number (nth 4 token-properties))))
+         (y (string-to-number (nth 4 token-properties)))
+         (subpixel-str (nth 5 token-properties))
+         (subpixel (when subpixel-str (string-to-number subpixel-str))))
     `((title . ,title)
       (name . ,name)
       (state . ,state)
       (type . ,type)
       (x . ,x)
-      (y . ,y))))
+      (y . ,y)
+      (subpixel . ,subpixel))))
 
 (defun adventurer/parse-place-tokens (place-token-string)
   (if place-token-string
@@ -122,6 +125,12 @@
 
 (defun adventurer/collect-title ()
   (save-excursion (org-get-title)))
+
+(defun adventurer/collect-statblocks ()
+  (save-excursion
+    (beginning-of-buffer)
+    (when (search-forward ":ID: statblocks" nil t)
+      (org-get-entry))))
 
 (defun adventurer/collect-scene-data ()
   (adventurer/map-scenes 'adventurer/build-entry))

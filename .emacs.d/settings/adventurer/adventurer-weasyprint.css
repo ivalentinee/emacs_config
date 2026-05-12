@@ -1,6 +1,12 @@
 @page {
   margin: 1.5cm;
   size: A4;
+  @bottom-center {
+    content: counter(page);
+    font-family: sans-serif;
+    font-size: 0.8em;
+    color: #666;
+  }
 }
 body {
   font-family: sans-serif;
@@ -18,6 +24,14 @@ p {
   margin-bottom: 15px;
   margin-top: 0px;
 }
+ul, ol {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding-left: 1.3em;
+}
+li {
+  margin-bottom: 2px;
+}
 .nobreak {
   page-break-inside: avoid;
   margin-bottom: 50px;
@@ -34,4 +48,10 @@ p {
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+}
+a.ref-extra::after {
+  content: " (стр. " target-counter(attr(href url), page) ")";
+}
+a.ref-scene::after {
+  content: " (стр. " target-counter(attr(href url), page) ")";
 }

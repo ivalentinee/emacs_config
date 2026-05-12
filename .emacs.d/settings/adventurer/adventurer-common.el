@@ -8,11 +8,15 @@
   (mkdir (string-join `("./" ,(adventurer/build-path))) t))
 
 (defun adventurer/remove-build-path ()
-  (delete-directory (string-join `("./" ,(adventurer/build-path)))))
+  (let ((path (string-join `("./" ,(adventurer/build-path)))))
+    (when (file-directory-p path)
+      (delete-directory path t))))
 
-(defun adventurer/compose-filename (extension)
-  (let* ((base-file-name (or (file-name-nondirectory (buffer-file-name)) (buffer-name)))
-         (filename (file-name-with-extension base-file-name extension)))
+(defun adventurer/compose-filename (extension &optional suffix)
+  (let* ((base-file-name (if (buffer-file-name) (file-name-nondirectory (buffer-file-name)) (buffer-name)))
+         (name-without-ext (file-name-sans-extension base-file-name))
+         (full-name (if suffix (concat name-without-ext suffix) name-without-ext))
+         (filename (file-name-with-extension full-name extension)))
     (string-join `(,(adventurer/build-path) ,filename) "/")))
 
 (defun adventurer/get-script-path ()
@@ -27,5 +31,6 @@
   (interactive)
   (adventurer/replace-in-region "place_tokens = \\[\n" "")
   (adventurer/replace-in-region "\n\\]$" "")
+  (adventurer/replace-in-region " +{ name = \"\\([^\"]+\\)\", x = \\([0-9]+\\), y = \\([0-9]+\\), state = \"\\([^\"]+\\)\", subpixel = \\([0-9]+\\) }" "[[\\1 | \\4 | point | \\2 | \\3 | \\5][\\1]]")
   (adventurer/replace-in-region " +{ name = \"\\([^\"]+\\)\", x = \\([0-9]+\\), y = \\([0-9]+\\), state = \"\\([^\"]+\\)\" }" "[[\\1 | \\4 | point | \\2 | \\3][\\1]]")
   (adventurer/replace-in-region ",\n" " "))
