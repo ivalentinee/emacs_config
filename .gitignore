@@ -8,3 +8,5 @@
 .emacs.d/transient/
 .emacs.d/auto-save-list/
 .emacs.d/.org-id-locations
+.emacs.d/.mc-lists.el
+.emacs.d/recentf

@@ -60,13 +60,6 @@
 (define-key global-map (kbd "C-c i c") 'string-inflection-camelcase)
 (define-key global-map (kbd "C-c i U") 'string-inflection-upcase)
 
-;; Helm
-(helm-mode 1)
-(setq helm-move-to-line-cycle-in-source nil)
-(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
-(global-set-key (kbd "C-x b") 'helm-buffers-list)
-
 ;; multiple-cursors
 (require 'multiple-cursors)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
@@ -76,8 +69,6 @@
 
 ;; Projectile
 (projectile-global-mode)
-(require 'helm-projectile)
-(helm-projectile-on)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p w") 'projectile-copy-file-name)
 (define-key projectile-mode-map (kbd "C-c p x f") 'projectile-format-file)
@@ -127,17 +118,12 @@
 (require 'git-bindings)
 (require 'yas-settings)
 
-;; alchemist
-(setq alchemist-mix-command "/usr/local/bin/docker-compose run --rm web mix")
-(setq alchemist-iex-program-name "/usr/local/bin/docker-compose run --rm web iex")
-(setq alchemist-execute-command "/usr/local/bin/docker-compose run --rm web elixir")
-(setq alchemist-compile-command "/usr/local/bin/docker-compose run --rm web elixirc")
-
 ;; magit
 (require 'magit-process nil t)
 (add-hook
  'magit-mode-hook
  (lambda ()
+   (setq magit-completing-read-function 'magit-builtin-completing-read)
    (magit-add-section-hook 'magit-status-sections-hook
                            'magit-insert-unpushed-to-upstream
                            'magit-insert-unpushed-to-upstream-or-recent
