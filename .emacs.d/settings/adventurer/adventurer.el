@@ -2,6 +2,7 @@
 (load "adventurer-graph")
 (load "adventurer-path-mapper")
 (load "adventurer-document")
+(load "adventurer-group")
 
 (defun adventurer/build ()
   "Builds .org adventurer buffer"
