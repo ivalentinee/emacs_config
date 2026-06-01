@@ -1,11 +1,7 @@
-(require 'helm-custom-themes)
-
 (defvar custom-default-font "Liberation Mono 13")
 
-(defvar dark-client-theme 'deeper-blue)
 (defvar dark-theme 'tango-dark)
-(defvar light-client-theme 'adwaita)
-(defvar light-theme 'flatui)
+(defvar light-theme 'adwaita)
 
 (defun set-custom-font (custom-font)
   (add-to-list 'default-frame-alist (cons 'font custom-font))
@@ -14,28 +10,30 @@
 (defun go-to-dark ()
   "setup light-on-dark colors"
   (interactive)
-  (helm-apply-dark-theme)
   (disable-theme light-theme)
-  (disable-theme light-client-theme)
   (set-face-foreground 'highlight nil)
+  (set-face-background 'highlight "grey12")
+  (set-face-foreground 'hl-line nil)
   (set-face-background 'hl-line "black")
-  (if (daemonp)
-      (load-theme dark-client-theme)
-    (if window-system (load-theme dark-theme)))
-  (sml/apply-theme "dark"))
+  (load-theme dark-theme)
+  ;; (set-face-background 'isearch "#ce5c00")
+  ;; (set-face-foreground 'isearch "#eeeeec")
+  (sml/apply-theme "dark")
+  (ivy-apply-dark-theme))
 
 (defun go-to-light ()
   "setup dark-on-light colors"
   (interactive)
-  (helm-apply-light-theme)
   (disable-theme dark-theme)
-  (disable-theme dark-client-theme)
   (set-face-foreground 'highlight nil)
+  (set-face-background 'highlight "grey")
+  (set-face-foreground 'hl-line nil)
   (set-face-background 'hl-line "gainsboro")
-  (if (daemonp)
-      (load-theme light-client-theme)
-    (if window-system (load-theme light-theme)))
-  (sml/apply-theme "light"))
+  (load-theme light-theme)
+  ;; (set-face-background 'isearch "yellow")
+  ;; (set-face-foreground 'isearch nil)
+  (sml/apply-theme "light")
+  (ivy-apply-light-theme))
 
 (defun go-to-terminal-magit ()
   "setup colors for white-on-black terminal for magit"
@@ -73,8 +71,7 @@
   (go-to-terminal-highlight)
   (go-to-terminal-magit)
   (go-to-terminal-keys)
-  (sml/apply-theme "respectful")
-  (helm-apply-terminal-theme))
+  (sml/apply-theme "respectful"))
 
 (set-custom-font custom-default-font)
 

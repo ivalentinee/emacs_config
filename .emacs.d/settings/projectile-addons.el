@@ -42,7 +42,7 @@
   "Perform interactive ag search in the project"
   (interactive)
   (if (projectile-project-root)
-      (helm-do-ag (projectile-project-root) '() (thing-at-point 'symbol t))
+      (counsel-ag (thing-at-point 'symbol t) (projectile-project-root))
     (error "Not in a project")))
 
 (provide 'projectile-addons)
