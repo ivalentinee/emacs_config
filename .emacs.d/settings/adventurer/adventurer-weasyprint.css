@@ -49,6 +49,11 @@ li {
   margin-left: auto;
   margin-right: auto;
 }
+img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
 a.ref-extra::after {
   content: " (стр. " target-counter(attr(href url), page) ")";
 }
