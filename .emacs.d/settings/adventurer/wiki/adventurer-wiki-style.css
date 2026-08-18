@@ -1,0 +1,213 @@
+/* setting.css — Styles for the Cities of Progress setting wiki */
+
+/* --- Base typography --- */
+
+body {
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1em 1.5em;
+    line-height: 1.6;
+    color: #222;
+    background: #fafafa;
+}
+
+/* --- Headings --- */
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 1.4em;
+    margin-bottom: 0.4em;
+    line-height: 1.25;
+    color: #111;
+}
+
+h1.page-title {
+    border-bottom: 2px solid #c62828;
+    padding-bottom: 0.3em;
+    margin-top: 0.5em;
+}
+
+h1 { font-size: 1.8em; }
+h2 { font-size: 1.4em; }
+h3 { font-size: 1.2em; }
+h4 { font-size: 1.05em; }
+
+/* --- Links --- */
+
+a {
+    color: #1565c0;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #0d47a1;
+}
+
+a:visited {
+    color: #6a1b9a;
+}
+
+/* --- Navigation --- */
+
+nav.back-link {
+    margin-bottom: 1em;
+    font-size: 0.9em;
+}
+
+nav.back-link a {
+    color: #666;
+}
+
+nav.back-link a:hover {
+    color: #333;
+}
+
+/* --- Spoiler: [тайна] sections --- */
+
+details.spoiler {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.5em 1em;
+    margin: 1em 0;
+    background: #fff;
+}
+
+details.spoiler > summary {
+    cursor: pointer;
+    color: #666;
+    font-style: italic;
+    padding: 0.3em 0;
+    list-style: none;
+}
+
+details.spoiler > summary::-webkit-details-marker {
+    display: none;
+}
+
+details.spoiler > summary::before {
+    content: "▸ ";
+}
+
+details.spoiler[open] > summary::before {
+    content: "▾ ";
+}
+
+details.spoiler > summary:hover {
+    color: #333;
+}
+
+details.spoiler.gm-only {
+    border-left: 3px solid #c62828;
+}
+
+/* --- Spoiler: page-level secret --- */
+
+details.page-secret {
+    border: 2px solid #c00;
+    padding: 1em;
+    margin: 1em 0;
+    border-radius: 4px;
+}
+
+details.page-secret > summary {
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    padding: 0.5em;
+    list-style: none;
+}
+
+details.page-secret > summary::-webkit-details-marker {
+    display: none;
+}
+
+/* --- Tables --- */
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1em 0;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 0.4em 0.8em;
+    text-align: left;
+}
+
+th {
+    background: #f0f0f0;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background: #f8f8f8;
+}
+
+/* --- Code --- */
+
+code {
+    font-family: "Fira Code", "Consolas", "Monaco", monospace;
+    background: #f0f0f0;
+    padding: 0.15em 0.35em;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+pre {
+    background: #f0f0f0;
+    padding: 1em;
+    border-radius: 4px;
+    overflow-x: auto;
+    line-height: 1.4;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+}
+
+/* --- Lists --- */
+
+ul, ol {
+    padding-left: 1.5em;
+}
+
+li {
+    margin-bottom: 0.3em;
+}
+
+/* --- Blockquotes --- */
+
+blockquote {
+    border-left: 3px solid #ccc;
+    margin: 1em 0;
+    padding: 0.5em 1em;
+    color: #555;
+    background: #f9f9f9;
+}
+
+/* --- Images --- */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --- Horizontal rule --- */
+
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 2em 0;
+}
+
+/* --- Back link at bottom --- */
+
+.back-link-bottom {
+    margin-top: 2em;
+    padding-top: 1em;
+    border-top: 1px solid #eee;
+    font-size: 0.9em;
+}

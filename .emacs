@@ -1,5 +1,6 @@
 (add-to-list 'load-path "~/.emacs.d/settings")
 (add-to-list 'load-path "~/.emacs.d/settings/adventurer")
+(add-to-list 'load-path "~/.emacs.d/settings/adventurer/wiki")
 (add-to-list 'load-path "~/.emacs.d/settings/time-tracker")
 
 (custom-set-variables
@@ -67,8 +68,9 @@
  '(preview-fast-conversion t)
  '(ruby-indent-tabs-mode nil)
  '(safe-local-variable-values
-   '((eval lsp) (lsp-enabled-clients ts-ls eslint)
-     (lsp-enabled-clients yamlls) (eval prettier-js-mode)
+   '((eval lsp)
+     (lsp-enabled-clients ts-ls eslint) (lsp-enabled-clients yamlls)
+     (eval prettier-js-mode)
      (projectile-tags-command
       . "echo 'ripper-tags -R -e -f TAGS --exclude vendor/bundle && cat GEM_TAGS >> TAGS' | /bin/bash --login")
      (projectile-tags-command
