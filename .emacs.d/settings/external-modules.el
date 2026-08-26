@@ -68,7 +68,7 @@
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 ;; Projectile
-(projectile-global-mode)
+(projectile-mode +1)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p w") 'projectile-copy-file-name)
 (define-key projectile-mode-map (kbd "C-c p x f") 'projectile-format-file)

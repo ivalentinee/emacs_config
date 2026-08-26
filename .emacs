@@ -53,7 +53,7 @@
  '(org-export-html-toplevel-hlevel 1 t)
  '(package-selected-packages
    '(ace-window ag aggressive-indent anzu autopair avy cmake-mode company
-                counsel direx disable-mouse elixir-mode
+                counsel denote direx disable-mouse elixir-mode
                 elixir-yasnippets erlang expand-region fireplace
                 flatui-theme flycheck gitconfig-mode helm-ag
                 highlight-parentheses ibuffer-vc ivy jinja2-mode
