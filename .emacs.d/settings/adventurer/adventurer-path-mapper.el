@@ -1,5 +1,6 @@
 (load "adventurer-common")
 (load "adventurer-collect")
+(load "adventurer-assets")
 
 (setq *adventurer-pathmapper-indent* 7)
 
@@ -12,7 +13,10 @@
       wallpaper-value "wallpaper.png"))
 
 (defun adventurer/build-path-mapper/write-wallpaper (output)
-  (adventurer/build-path-mapper/append-output output (format "wallpaper = \"%s\"" (adventurer/build-path-mapper/wallpaper-path))))
+  (adventurer/build-path-mapper/append-output
+   output
+   (format "wallpaper = \"%s\""
+           (adventurer/assets/packed-path (adventurer/build-path-mapper/wallpaper-path)))))
 
 (defun adventurer/build-path-mapper/render-alist-property (alist-property)
   (cond ((stringp (cdr alist-property)) (format "%s = \"%s\"" (car alist-property) (cdr alist-property)))
@@ -39,9 +43,23 @@
             (output-with-urls (adventurer/build-path-mapper/append-output output urls-value)))
       output-with-urls output))
 
+(defun adventurer/build-path-mapper/token-file (token)
+  (adventurer/assets/packed-file
+   (adventurer/assets/asset (alist-get 'image-id token)) 'token))
+
+(defun adventurer/build-path-mapper/render-token (token)
+  ;; the declared id becomes the path the package carries it at
+  (adventurer/build-path-mapper/indent
+   (adventurer/build-path-mapper/render-alist
+    (mapcar (lambda (property)
+              (if (eq (car property) 'image-id)
+                  (cons 'image (adventurer/assets/packed-path
+                                (adventurer/build-path-mapper/token-file token)))
+                property))
+            token))))
+
 (defun adventurer/build-path-mapper/render-scene-tokens (scene)
-  (let ((render-token (lambda (token) (adventurer/build-path-mapper/indent (adventurer/build-path-mapper/render-alist token)))))
-    (mapcar render-token (alist-get 'tokens scene))))
+  (mapcar 'adventurer/build-path-mapper/render-token (alist-get 'tokens scene)))
 
 (defun adventurer/build-path-mapper/render-scene-place-tokens (scene)
   (let ((render-place-token (lambda (place-token) (adventurer/build-path-mapper/indent (adventurer/build-path-mapper/render-alist place-token)))))
@@ -56,9 +74,13 @@
   (let* ((scene-output "[[scenes]]")
          (scene-title (alist-get 'title scene))
          (scene-id (alist-get 'id scene))
-         (scene-map (adventurer/build-path-mapper/resolve-map-path (alist-get 'map scene)))
+         (scene-ref (alist-get 'ref scene))
+         (scene-map (adventurer/assets/packed-path
+                     (adventurer/build-path-mapper/map-file (alist-get 'map scene))))
          (scene-tokens (adventurer/build-path-mapper/render-scene-tokens scene))
          (scene-place-tokens (adventurer/build-path-mapper/render-scene-place-tokens scene))
+         (scene-output (string-join `(,scene-output ,(format "id = \"%s\"" scene-id)) "\n"))
+         (scene-output (string-join `(,scene-output ,(format "ref = \"%s\"" scene-ref)) "\n"))
          (scene-output (string-join `(,scene-output ,(format "name = \"%s\"" scene-title)) "\n"))
          (scene-output (string-join `(,scene-output "type = \"battle\"") "\n"))
          (scene-output (string-join `(,scene-output ,(format "map.file = \"%s\"" scene-map)) "\n"))
@@ -68,8 +90,7 @@
     scene-output))
 
 (defun adventurer/build-path-mapper/write-scenes (output scene-entries)
-  (let* ((scenes-with-map (seq-filter #'(lambda (scene) (alist-get 'map scene)) scene-entries))
-         (non-todo-scenes (seq-filter #'(lambda (scene) (not (alist-get 'todo scene))) scenes-with-map))
+  (let* ((non-todo-scenes (adventurer/packaged-scenes scene-entries))
          (rendered-scenes (mapcar 'adventurer/build-path-mapper/render-scene non-todo-scenes))
          (scenes-output (string-join rendered-scenes "\n\n")))
     (adventurer/build-path-mapper/append-output output scenes-output)))
@@ -85,22 +106,27 @@
           (error "XCF to ORA conversion failed for %s:\n%s" xcf-path (string-trim output)))))
     ora-path))
 
-(defun adventurer/build-path-mapper/resolve-map-path (map-path)
-  (if (and map-path (string-suffix-p ".xcf" map-path))
-      (adventurer/build-path-mapper/convert-xcf-to-ora map-path)
-    map-path))
+(defun adventurer/build-path-mapper/map-file (map-id)
+  ;; the .ora the package carries; convert-xcf-to-ora rebuilds it only when the
+  ;; .xcf is newer, which is the freshness rule the authored path used to carry
+  (let* ((files (adventurer/assets/asset map-id))
+         (xcf (adventurer/assets/with-extension files "xcf")))
+    (if xcf
+        (adventurer/build-path-mapper/convert-xcf-to-ora xcf)
+      (adventurer/assets/packed-file files 'map))))
 
 (defun adventurer/build-path-mapper/collect-scene-files (scene)
-  (let* ((map-path (adventurer/build-path-mapper/resolve-map-path (alist-get 'map scene)))
-         (tokens (alist-get 'tokens scene))
-         (token-paths (mapcar #'(lambda (token) (alist-get 'image token)) tokens)))
-    (cons map-path token-paths)))
+  ;; the one file per asset the package carries
+  (cons (adventurer/build-path-mapper/map-file (alist-get 'map scene))
+        (mapcar 'adventurer/build-path-mapper/token-file (alist-get 'tokens scene))))
 
 (defun adventurer/build-path-mapper/collect-scene-source-files (scene)
-  (let* ((map-path (alist-get 'map scene))
-         (tokens (alist-get 'tokens scene))
-         (token-paths (mapcar #'(lambda (token) (alist-get 'image token)) tokens)))
-    (cons map-path token-paths)))
+  ;; every file of every asset, source formats included; the locality filter is
+  ;; adventurer/pack's, because only it knows the archive is the document's own
+  (append (adventurer/assets/asset (alist-get 'map scene))
+          (flatten-tree
+           (mapcar (lambda (token) (adventurer/assets/asset (alist-get 'image-id token)))
+                   (alist-get 'tokens scene)))))
 
 (defun adventurer/build-path-mapper/collect-source-files (scene-entries)
   (let* ((scene-files (flatten-tree (mapcar 'adventurer/build-path-mapper/collect-scene-source-files scene-entries)))
@@ -109,29 +135,34 @@
     (seq-uniq files)))
 
 (defun adventurer/build-path-mapper/collect-files (scene-entries)
-  (let* ((scenes-with-map (seq-filter #'(lambda (scene) (alist-get 'map scene)) scene-entries))
-         (non-todo-scenes (seq-filter #'(lambda (scene) (not (alist-get 'todo scene))) scenes-with-map))
+  (let* ((non-todo-scenes (adventurer/packaged-scenes scene-entries))
          (scene-files (flatten-tree (mapcar 'adventurer/build-path-mapper/collect-scene-files non-todo-scenes)))
          (wallpaper-path (adventurer/build-path-mapper/wallpaper-path))
          (files (cons wallpaper-path scene-files)))
     (seq-uniq files)))
 
+(defun adventurer/build-path-mapper/staging-path ()
+  (expand-file-name "package" (adventurer/build-path)))
+
 (defun adventurer/build-path-mapper/pack (files)
-  (let ((file-list (string-join (mapcar #'(lambda (file) (format "\"%s\"" file)) files) " "))
-        (output-filename (adventurer/compose-filename "zip")))
-    (copy-file (adventurer/compose-filename "toml") "manifest.toml")
+  (let* ((staging (adventurer/build-path-mapper/staging-path))
+         (output-filename (expand-file-name (adventurer/compose-filename "pmadventure"))))
+    (adventurer/assets/stage (seq-filter 'file-exists-p (remq nil files)) staging)
+    (copy-file (adventurer/compose-filename "toml")
+               (expand-file-name "manifest.toml" staging) t)
     (when (file-exists-p output-filename)
       (delete-file output-filename))
-    (shell-command (format "/usr/bin/zip \"%s\" %s \"manifest.toml\" %s" output-filename file-list (adventurer/ignore-shell-output)))
-    (delete-file "manifest.toml")))
+    (shell-command (format "cd \"%s\" && /usr/bin/zip -r \"%s\" assets manifest.toml %s"
+                           staging output-filename (adventurer/ignore-shell-output)))
+    (delete-directory staging t)))
 
 (defun adventurer/build-path-mapper/clear ()
   (when (file-exists-p (adventurer/compose-filename "toml"))
     (delete-file (adventurer/compose-filename "toml")))
   (when (file-exists-p "manifest.toml")
     (delete-file "manifest.toml"))
-  (when (file-exists-p (adventurer/compose-filename "zip"))
-    (delete-file (adventurer/compose-filename "zip"))))
+  (when (file-exists-p (adventurer/compose-filename "pmadventure"))
+    (delete-file (adventurer/compose-filename "pmadventure"))))
 
 (defun adventurer/build-path-mapper (scene-entries)
   (let* ((output (format "title = \"%s\"" (org-get-title)))

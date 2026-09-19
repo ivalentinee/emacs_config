@@ -43,7 +43,7 @@
 
 (defun adventurer/build-document/insert-scene-xp (scene)
   (when (and (listp (alist-get 'xp scene)) (length> (alist-get 'xp scene) 0))
-    (insert (format "\n*** %s\n" (alist-get 'title scene)))
+    (insert (format "\n*** %s\n" (adventurer/scene-printed-form scene)))
     (mapcar
      #'(lambda (xp-entry) (insert (format "- □ *%s* %s\n" (alist-get 'xp-string xp-entry) (alist-get 'description xp-entry))))
      (alist-get 'xp scene))))
@@ -135,7 +135,7 @@
   (let ((id (alist-get 'id scene)))
     (adventurer/build-document/insert-nobreak-start)
     (insert (format "\n<a id=\"scene-%s\"></a>\n" id))
-    (insert (format "\n** %s\n" (alist-get 'title scene)))
+    (insert (format "\n** %s\n" (adventurer/scene-printed-form scene)))
     (let ((body (adventurer/build-document/without-properties (alist-get 'body scene))))
       (adventurer/build-document/insert-scene-meta scene body)
       (insert (adventurer/build-document/without-extra body)))
@@ -171,7 +171,7 @@
     (when (and extra (not (string-empty-p (string-trim extra))))
       (adventurer/build-document/insert-nobreak-start)
       (insert (format "\n<a id=\"extra-%s\"></a>\n" id))
-      (insert (format "\n** %s\n" (alist-get 'title scene)))
+      (insert (format "\n** %s\n" (adventurer/scene-printed-form scene)))
       (insert (format "\n/<a class=\"ref-scene\" href=\"#scene-%s\">← Сцена</a>/\n\n" id))
       (insert extra)
       (adventurer/build-document/insert-nobreak-end))))

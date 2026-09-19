@@ -1,17 +1,18 @@
 (load "adventurer-common")
+(load "adventurer-collect")
 
 (defun adventurer/print-scene-entry-link-items (id entry-link-items indent)
   (mapcar
-   (lambda (link-item) (format "%s%s -> %s [label=\"%s\"];" indent id (alist-get 'id link-item) (alist-get 'tag link-item)))
+   (lambda (link-item) (format "%s\"%s\" -> \"%s\" [label=\"%s\"];" indent id (alist-get 'id link-item) (alist-get 'tag link-item)))
    entry-link-items))
 
 (defun adventurer/print-scene-entry-links (entry-links)
   (let ((indent "  ")
         (id (alist-get 'id entry-links))
-        (title (alist-get 'title entry-links))
+        (printed-form (adventurer/scene-printed-form entry-links))
         (links (alist-get 'links entry-links)))
     (string-join
-     (cons (format "%s%s [label=\"%s\"];" indent id title)
+     (cons (format "%s\"%s\" [label=\"%s\"];" indent id printed-form)
            (adventurer/print-scene-entry-link-items id links indent))
      "\n")))
 
