@@ -3,6 +3,9 @@
 (load "adventurer-path-mapper")
 (load "adventurer-document")
 (load "adventurer-group")
+(load "adventurer-id")
+(load "adventurer-assets")
+(load "adventurer-validate")
 
 (defun adventurer/build ()
   "Builds .org adventurer buffer"
@@ -10,6 +13,7 @@
   (unless (eq major-mode 'org-mode)
     (error "Not an org-mode buffer"))
   (let ((scene-data (adventurer/collect-scene-data)))
+    (adventurer/validate/adventure scene-data)
     (adventurer/make-build-path)
     (adventurer/build-graph scene-data)
     (adventurer/build-path-mapper scene-data)
@@ -45,7 +49,8 @@
     (error "Not an org-mode buffer"))
   (let* ((scene-data (adventurer/collect-scene-data))
          (org-file (file-name-nondirectory (buffer-file-name)))
-         (asset-files (adventurer/build-path-mapper/collect-source-files scene-data))
+         (asset-files (adventurer/assets/local-files
+                       (adventurer/build-path-mapper/collect-source-files scene-data)))
          (all-files (cons org-file asset-files))
          (unique-files (seq-uniq (seq-filter #'file-exists-p all-files)))
          (output-filename (adventurer/compose-filename "src.zip"))
