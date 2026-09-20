@@ -1,0 +1,53 @@
+(require 'ox-html)
+(require 'cl-lib)
+
+(setq denote-graph/html/script-path (file-name-directory load-file-name))
+(setq org-export-allow-bind-keywords t)
+
+(defun denote-graph/html/export (denote-files build-dir url-prefix)
+  (mapcar #'(lambda (denote-file) (denote-graph/html/export-file denote-file build-dir url-prefix)) denote-files)
+  (denote-graph/html/write-css build-dir))
+
+(defun denote-graph/html/export-file (denote-file build-dir url-prefix)
+  "Converts org file to HTML and writes it to 'build-dir'"
+  (let ((memo-denote-directory denote-directory)
+        (filename-out (file-name-concat build-dir (concat (denote-retrieve-filename-identifier denote-file) ".html"))))
+    (with-temp-buffer
+      (let ((org-export-with-toc nil)
+            (org-export-timestamp-file nil)
+            (org-export-with-statistics-cookies nil)
+            (org-export-with-properties nil)
+            (org-export-with-section-numbers nil)
+            (org-export-with-footnotes nil)
+            (org-export-with-entities nil)
+            (org-html-head "")
+            (org-html-head-extra (denote-graph/html/style-tag url-prefix))
+            (org-html-head-include-default-style nil)
+            (org-html-head-include-scripts nil)
+            (org-html-preamble nil)
+            (org-html-postamble nil)
+            (org-html-use-infojs nil))
+        (insert (format "#+bind: denote-directory \"%s\"\n" memo-denote-directory))
+        (insert-file-contents denote-file)
+        (org-export-to-file 'html filename-out)))
+    (denote-graph/html/fix-denote-links url-prefix filename-out)))
+
+(defun denote-graph/html/style-tag (url-prefix)
+  (let ((css-path (file-name-concat url-prefix "index.css")))
+    (format "<link rel=\"stylesheet\" type=\"text/css\" href=\"%s\">" css-path)))
+
+(defun denote-graph/html/fix-denote-links (url-prefix filename-out)
+  (with-temp-file filename-out
+    (insert-file-contents filename-out)
+    (goto-char (point-min))
+    (while (re-search-forward "<a href=\\(\"[^\"]*--[^\"]*\\)\.html[^\"]*\">" nil t)
+      (let* ((matched-text (match-string 1))
+             (message matched-text)
+             (denote-name (save-match-data (denote-retrieve-filename-identifier matched-text)))
+             (new-text (format "<a href=\"%s.html\">" (file-name-concat url-prefix denote-name))))
+        (replace-match new-text t t)))))
+
+(defun denote-graph/html/write-css (build-dir)
+  (let ((css-file-path (file-name-concat denote-graph/html/script-path "index.css"))
+        (css-output-file-path (file-name-concat build-dir "index.css")))
+    (copy-file css-file-path css-output-file-path)))
